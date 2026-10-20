@@ -1,0 +1,23 @@
+{
+  "name": "ine-evidence",
+  "displayName": "INE Evidence",
+  "version": "0.1.2",
+  "description": "Find the correct INE series and answer with its values, definitions, dates and limitations intact.",
+  "author": {
+    "name": "Sami Halawa",
+    "email": "sami@samihalawa.com"
+  },
+  "license": "MIT",
+  "keywords": [
+    "spain",
+    "official-data",
+    "read-only"
+  ],
+  "homepage": "https://github.com/samihalawa/ine-evidence/blob/main/README.md",
+  "repository": "https://github.com/samihalawa/ine-evidence",
+  "icon": "./assets/icon.png",
+  "documentationUrl": "https://github.com/samihalawa/ine-evidence/blob/main/README.md",
+  "supportUrl": "https://github.com/samihalawa/ine-evidence/blob/main/SUPPORT.md",
+  "privacyPolicyUrl": "https://github.com/samihalawa/ine-evidence/blob/main/PRIVACY.md",
+  "termsOfServiceUrl": "https://github.com/samihalawa/ine-evidence/blob/main/TERMS.md"
+}

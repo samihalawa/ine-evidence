@@ -1,0 +1,41 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "author": {
+    "email": "sami@samihalawa.com",
+    "name": "Sami Halawa"
+  },
+  "description": "Find the correct INE series and answer with its values, definitions, dates and limitations intact.",
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "capabilities": [],
+        "category": "Productivity",
+        "composerIcon": "./assets/icon.png",
+        "defaultPrompt": [
+          "Find the current INE series for my question, with its units and latest observation date.",
+          "Compare these official Spanish statistics without mixing bases or periods."
+        ],
+        "developerName": "Sami Halawa",
+        "displayName": "INE Evidence",
+        "logo": "./assets/icon.png",
+        "longDescription": "Find the correct INE series and answer with its values, definitions, dates and limitations intact.\n\nIncludes a focused assistant workflow, official-source references, review examples and a Python 3.11+ read-only adapter. In ChatGPT, uses available native browsing/file tools; in Claude Code or Codex, the bundled scripts can retrieve official data directly when networking is permitted. No separate account, API key or publisher-hosted server is required for this skills release.\n\nNo proprietary economic feed, forecast engine, investment advice, unsupported latest-data claims or silent joins across incompatible series.\n\nIndependent software by Sami Halawa. Not affiliated with Spanish public authorities.",
+        "shortDescription": "Spanish statistics, verified",
+        "websiteURL": "https://github.com/samihalawa/ine-evidence/blob/main/README.md",
+        "supportURL": "https://github.com/samihalawa/ine-evidence/blob/main/SUPPORT.md",
+        "privacyPolicyURL": "https://github.com/samihalawa/ine-evidence/blob/main/PRIVACY.md",
+        "termsOfServiceURL": "https://github.com/samihalawa/ine-evidence/blob/main/TERMS.md"
+      }
+    }
+  },
+  "keywords": [
+    "spain",
+    "official-data",
+    "read-only",
+    "ine-evidence"
+  ],
+  "license": "MIT",
+  "name": "ine-evidence",
+  "version": "0.1.2",
+  "homepage": "https://github.com/samihalawa/ine-evidence/blob/main/README.md",
+  "repository": "https://github.com/samihalawa/ine-evidence"
+}

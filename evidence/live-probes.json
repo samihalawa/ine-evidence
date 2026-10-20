@@ -1,0 +1,102 @@
+{
+  "checked_at": "2026-10-20T15:38:46.694660+00:00",
+  "scope": "Bounded adapter smoke tests, not full historical coverage or model-based user acceptance.",
+  "passed": 4,
+  "total": 4,
+  "tests": [
+    {
+      "tool": "ine_series",
+      "arguments": {
+        "series_code": "IPC251852",
+        "last": 3
+      },
+      "ok": true,
+      "elapsed_seconds": 1.153,
+      "coverage": {
+        "latest_observation_date": "2025-12-01",
+        "latest_observation_age_days": 323
+      },
+      "sources": [
+        {
+          "url": "https://servicios.ine.es/wstempus/js/ES/DATOS_SERIE/IPC251852?nult=3&tip=AM",
+          "retrieved_at": "2026-10-20T15:38:44.504400+00:00",
+          "sha256": "5d6272146f1093ddb1a713183ecc2e3dad6f9d536511de4370e1a240821fde03",
+          "cache_hit": false
+        }
+      ],
+      "error": null
+    },
+    {
+      "tool": "ine_operations",
+      "arguments": {
+        "query": "precios consumo"
+      },
+      "ok": true,
+      "elapsed_seconds": 1.641,
+      "coverage": {
+        "matches": 2,
+        "truncated": false
+      },
+      "sources": [
+        {
+          "url": "https://servicios.ine.es/wstempus/js/ES/OPERACIONES_DISPONIBLES",
+          "retrieved_at": "2026-10-20T15:38:44.989874+00:00",
+          "sha256": "3dd21a88f99d4eabdccc2a92fafadbb17cb0a928d516c269872fec6bc8bbe2be",
+          "cache_hit": false
+        }
+      ],
+      "error": null,
+      "record_count": 2
+    },
+    {
+      "tool": "ine_tables",
+      "arguments": {
+        "operation_id": 25,
+        "limit": 10
+      },
+      "ok": true,
+      "elapsed_seconds": 1.376,
+      "coverage": {
+        "matches": 59,
+        "truncated": true
+      },
+      "sources": [
+        {
+          "url": "https://servicios.ine.es/wstempus/js/ES/TABLAS_OPERACION/25",
+          "retrieved_at": "2026-10-20T15:38:46.367893+00:00",
+          "sha256": "98404d35c8cb453c3bb8155aab4a4c521b20f72f254986f53c0aed89cf4fa7d8",
+          "cache_hit": false
+        }
+      ],
+      "error": null,
+      "record_count": 10
+    },
+    {
+      "tool": "ine_table_series",
+      "arguments": {
+        "table_id": 24077,
+        "limit": 3
+      },
+      "ok": true,
+      "elapsed_seconds": 0.326,
+      "coverage": {
+        "page": 1,
+        "provider_records": 1,
+        "matches_on_page": 1,
+        "truncated": false,
+        "next_page": 2,
+        "exhaustive": false
+      },
+      "sources": [
+        {
+          "url": "https://servicios.ine.es/wstempus/js/ES/SERIES_TABLA/24077?page=1",
+          "retrieved_at": "2026-10-20T15:38:46.694496+00:00",
+          "sha256": "e0eec56e4b1053f559fc3369422e2e212229f4d9c99909fe8b3ca7963441ac97",
+          "cache_hit": false
+        }
+      ],
+      "error": null,
+      "record_count": 1
+    }
+  ]
+}

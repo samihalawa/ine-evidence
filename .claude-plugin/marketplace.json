@@ -1,0 +1,19 @@
+{
+  "name": "ine-evidence",
+  "owner": {
+    "name": "Sami Halawa",
+    "email": "sami@samihalawa.com"
+  },
+  "metadata": {
+    "description": "Find the correct INE series and answer with its values, definitions, dates and limitations intact.",
+    "version": "0.1.2"
+  },
+  "plugins": [
+    {
+      "name": "ine-evidence",
+      "source": "./",
+      "description": "Find the correct INE series and answer with its values, definitions, dates and limitations intact.",
+      "version": "0.1.2"
+    }
+  ]
+}
