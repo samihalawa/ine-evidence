@@ -1,0 +1,55 @@
+{
+  "name": "ine-evidence",
+  "checked_at": "2026-10-20T15:51:06.005235+00:00",
+  "source_commit": "6399aec621ccf8ebee9fac58e6058820311fb4fc",
+  "public_links": [
+    {
+      "field": "documentationUrl",
+      "url": "https://github.com/samihalawa/ine-evidence/blob/main/README.md",
+      "anonymous_http_status": 200,
+      "content_sha256": "48e0ce6dcd452530bd936f1c6ef5b11f27a3dd7fd338d27a635ed65eb078e888"
+    },
+    {
+      "field": "supportUrl",
+      "url": "https://github.com/samihalawa/ine-evidence/blob/main/SUPPORT.md",
+      "anonymous_http_status": 200,
+      "content_sha256": "65cbdbf9ba8a13eb3abb665ff725258c96b74b0551feb0ae9ac48bfabc4e8750"
+    },
+    {
+      "field": "privacyPolicyUrl",
+      "url": "https://github.com/samihalawa/ine-evidence/blob/main/PRIVACY.md",
+      "anonymous_http_status": 200,
+      "content_sha256": "4486b4c0063ca085f5c5e6f2bc5afb96d51b18fdc7925ed9b67c9c8fde990ac9"
+    },
+    {
+      "field": "termsOfServiceUrl",
+      "url": "https://github.com/samihalawa/ine-evidence/blob/main/TERMS.md",
+      "anonymous_http_status": 200,
+      "content_sha256": "a6c2ed312ba54b63f363f3777d6e4b685abfc2c1c11e345d3f805ebf96853d4c"
+    }
+  ],
+  "installation": [
+    {
+      "command": "claude plugin marketplace add https://github.com/samihalawa/ine-evidence.git",
+      "exit_code": 0,
+      "output": "Adding marketplace…Refreshing marketplace cache (timeout: 120s)…\nCloning repository (timeout: 120s): https://github.com/samihalawa/ine-evidence.git\nClone complete, validating marketplace…\nCleaning up old marketplace cache…\n✔ Successfully added marketplace: ine-evidence (declared in user settings)\n"
+    },
+    {
+      "command": "claude plugin install ine-evidence@ine-evidence",
+      "exit_code": 0,
+      "output": "Installing plugin \"ine-evidence@ine-evidence\"...✔ Successfully installed plugin: ine-evidence@ine-evidence (scope: user)\n"
+    },
+    {
+      "command": "claude plugin list",
+      "exit_code": 0,
+      "output": "Installed plugins:\n\n  ❯ ine-evidence@ine-evidence\n    Version: 0.1.2\n    Scope: user\n    Status: ✔ enabled\n\n"
+    },
+    {
+      "command": "claude plugin details ine-evidence",
+      "exit_code": 0,
+      "output": "INE Evidence (ine-evidence) 0.1.2\n  Description: Find the correct INE series and answer with its values, definitions, dates and limitations intact.\n  Source: ine-evidence@ine-evidence\n\nComponent inventory\n  Skills (1)  ine-evidence\n  Agents (0)\n  Hooks (0)\n  MCP servers (0)\n  LSP servers (0)\n\nProjected token cost\n  Always-on:   ~49 tok   added to every session\n\nPer-component (rounded)\n  component     always-on  on-invoke\n  ine-evidence        ~50      ~1.2k\n\n  On-invoke cost is paid each time a skill or agent fires.\n  Token counts are estimates and may differ from actual usage.\n"
+    }
+  ],
+  "ok": true,
+  "scope": "Anonymous public-source installation and component discovery only; not a model-based task completion or Anthropic approval."
+}
