@@ -18,7 +18,7 @@
     "logo": "./assets/icon.png",
     "longDescription": "Encuentra series del INE y presenta sus cifras con periodo, unidad, definición y límites de comparación.\n\nAnalistas, periodistas, docentes y consultoras. Descubre operaciones, tablas y series sin inventar códigos. Conserva los resultados dentro de cada página. Distingue periodo observado de fecha de consulta.\n\nEjemplos guardados sin conexión e informes HTML/Markdown/JSON. Sin cuenta adicional, claves API ni servicio propio. Los scripts requieren Python 3.11+ y red autorizada. En ChatGPT, se utilizan únicamente las herramientas nativas disponibles.\n\nNo ofrece previsiones ni asesoramiento de inversión. Una serie disponible puede estar discontinuada o usar una base antigua. No une series incompatibles ni infiere actualidad por disponibilidad.",
     "shortDescription": "Estadísticas con contexto",
-    "websiteURL": "https://github.com/samihalawa/ine-evidence/blob/main/README.md",
+    "websiteURL": "https://samihalawa.github.io/ine-evidence/",
     "supportURL": "https://github.com/samihalawa/ine-evidence/blob/main/SUPPORT.md",
     "privacyPolicyURL": "https://github.com/samihalawa/ine-evidence/blob/main/PRIVACY.md",
     "termsOfServiceURL": "https://github.com/samihalawa/ine-evidence/blob/main/TERMS.md"
@@ -35,5 +35,6 @@
   "license": "MIT",
   "name": "ine-evidence",
   "skills": "./skills",
-  "version": "0.2.0"
+  "version": "0.2.0",
+  "homepage": "https://samihalawa.github.io/ine-evidence/"
 }

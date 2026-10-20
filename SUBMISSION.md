@@ -6,6 +6,10 @@ Repository: https://github.com/samihalawa/ine-evidence
 
 Plugin at repository root. Stable identity: `ine-evidence`.
 
+Public product page: https://samihalawa.github.io/ine-evidence/
+
+Saved official-source report: https://samihalawa.github.io/ine-evidence/demo.html
+
 ## Listing
 
 Encuentra series del INE y presenta sus cifras con periodo, unidad, definición y límites de comparación.

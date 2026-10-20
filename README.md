@@ -22,9 +22,11 @@ Encuentra series del INE y presenta sus cifras con periodo, unidad, definición 
 
 También: “Comprueba si esta serie sigue actualizada antes de llamarla el dato más reciente.”
 
-[Ver el informe de ejemplo](examples/demo.md) · [Código de la página del producto](docs/index.html) · [Flujo completo](skills/ine-evidence/references/workflow.md)
+[Ver el informe de ejemplo](https://samihalawa.github.io/ine-evidence/demo.html) · [Web y demostración](https://samihalawa.github.io/ine-evidence/) · [Flujo completo](skills/ine-evidence/references/workflow.md)
 
 La demostración es una **captura guardada de fuentes oficiales**, no una consulta actual. Conserva fecha, enlaces y alcance.
+
+[![Vista de INE Evidence](docs/preview.jpg)](https://samihalawa.github.io/ine-evidence/)
 
 ## Instalar en Claude Code
 
