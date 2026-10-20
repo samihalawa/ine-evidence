@@ -4,7 +4,7 @@
     "email": "sami@samihalawa.com",
     "name": "Sami Halawa"
   },
-  "description": "Find the correct INE series and answer with its values, definitions, dates and limitations intact.",
+  "description": "Encuentra series del INE y presenta sus cifras con periodo, unidad, definición y límites de comparación.",
   "extensions": {
     "com.openai": {
       "interface": {
@@ -12,14 +12,15 @@
         "category": "Productivity",
         "composerIcon": "./assets/icon.png",
         "defaultPrompt": [
-          "Find the current INE series for my question, with its units and latest observation date.",
-          "Compare these official Spanish statistics without mixing bases or periods."
+          "Encuentra la serie adecuada para comparar el IPC y explica su base y periodo.",
+          "Comprueba si esta serie sigue actualizada antes de llamarla el dato más reciente.",
+          "Presenta estos datos sin convertir nulos o valores confidenciales en cero."
         ],
         "developerName": "Sami Halawa",
         "displayName": "INE Evidence",
         "logo": "./assets/icon.png",
-        "longDescription": "Find the correct INE series and answer with its values, definitions, dates and limitations intact.\n\nIncludes a focused assistant workflow, official-source references, review examples and a Python 3.11+ read-only adapter. In ChatGPT, uses available native browsing/file tools; in Claude Code or Codex, the bundled scripts can retrieve official data directly when networking is permitted. No separate account, API key or publisher-hosted server is required for this skills release.\n\nNo proprietary economic feed, forecast engine, investment advice, unsupported latest-data claims or silent joins across incompatible series.\n\nIndependent software by Sami Halawa. Not affiliated with Spanish public authorities.",
-        "shortDescription": "Spanish statistics, verified",
+        "longDescription": "Encuentra series del INE y presenta sus cifras con periodo, unidad, definición y límites de comparación.\n\nAnalistas, periodistas, docentes y consultoras. Descubre operaciones, tablas y series sin inventar códigos. Conserva los resultados dentro de cada página. Distingue periodo observado de fecha de consulta.\n\nEjemplos guardados sin conexión e informes HTML/Markdown/JSON. Sin cuenta adicional, claves API ni servicio propio. Los scripts requieren Python 3.11+ y red autorizada. En ChatGPT, se utilizan únicamente las herramientas nativas disponibles.\n\nNo ofrece previsiones ni asesoramiento de inversión. Una serie disponible puede estar discontinuada o usar una base antigua. No une series incompatibles ni infiere actualidad por disponibilidad.",
+        "shortDescription": "Estadísticas con contexto",
         "websiteURL": "https://github.com/samihalawa/ine-evidence/blob/main/README.md",
         "supportURL": "https://github.com/samihalawa/ine-evidence/blob/main/SUPPORT.md",
         "privacyPolicyURL": "https://github.com/samihalawa/ine-evidence/blob/main/PRIVACY.md",
@@ -29,13 +30,16 @@
   },
   "keywords": [
     "spain",
-    "official-data",
-    "read-only",
-    "ine-evidence"
+    "claude-plugin",
+    "ine",
+    "estadisticas",
+    "ipc",
+    "datos-economicos",
+    "series-temporales"
   ],
   "license": "MIT",
   "name": "ine-evidence",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "homepage": "https://github.com/samihalawa/ine-evidence/blob/main/README.md",
   "repository": "https://github.com/samihalawa/ine-evidence"
 }

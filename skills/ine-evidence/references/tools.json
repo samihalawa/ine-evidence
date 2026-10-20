@@ -1,17 +1,17 @@
 [
   {
     "name": "ine_operations",
-    "signature": "(query: 'str' = '', limit: 'int' = 30) -> 'dict[str, Any]'",
+    "signature": "(query: 'str' = '', limit: 'int' = 30, offset: 'int' = 0) -> 'dict[str, Any]'",
     "description": "Discover official INE statistical operations by name. Use returned operation IDs; do not guess table IDs or series codes."
   },
   {
     "name": "ine_tables",
-    "signature": "(operation_id: 'int', query: 'str' = '', limit: 'int' = 30) -> 'dict[str, Any]'",
+    "signature": "(operation_id: 'int', query: 'str' = '', limit: 'int' = 30, offset: 'int' = 0) -> 'dict[str, Any]'",
     "description": "List tables for an INE operation, optionally filtering titles. Retrieves catalog metadata, not observations."
   },
   {
     "name": "ine_table_series",
-    "signature": "(table_id: 'int', page: 'int' = 1, query: 'str' = '', limit: 'int' = 20) -> 'dict[str, Any]'",
+    "signature": "(table_id: 'int', page: 'int' = 1, query: 'str' = '', limit: 'int' = 20, offset: 'int' = 0) -> 'dict[str, Any]'",
     "description": "Discover series codes in one INE table page. Native provider pagination begins at page 1; output may be filtered locally."
   },
   {

@@ -1,51 +1,86 @@
+<p><img src="assets/icon.png" width="72" height="72" alt="Icono de INE Evidence"></p>
+
 # INE Evidence
 
-Find the correct INE series and answer with its values, definitions, dates and limitations intact.
+## La cifra correcta, con su contexto.
 
-**Author:** Sami Halawa · **Version:** 0.1.2 · **Format:** portable skills plugin + Claude plugin manifest · **Code licence:** MIT.
+Encuentra series del INE y presenta sus cifras con periodo, unidad, definición y límites de comparación.
 
-## What is included
+**Para:** Analistas, periodistas, docentes y consultoras.
 
-A dedicated workflow, official source references, self-contained Python 3.11+ adapters, icon, support/data-practices documents and acceptance examples. It is not an already hosted MCP app or an approved public-directory listing.
+**Fuente:** INE · **Sin cuenta adicional ni API key** · **Python 3.11+** · **MIT**
 
-## Install in Claude Code
+### Qué obtienes
+
+- Descubre operaciones, tablas y series sin inventar códigos.
+- Conserva los resultados dentro de cada página.
+- Distingue periodo observado de fecha de consulta.
+
+### Pruébalo con una pregunta
+
+> Encuentra la serie adecuada para comparar el IPC y explica su base y periodo.
+
+También: “Comprueba si esta serie sigue actualizada antes de llamarla el dato más reciente.”
+
+[Ver el informe de ejemplo](examples/demo.md) · [Código de la página del producto](docs/index.html) · [Flujo completo](skills/ine-evidence/references/workflow.md)
+
+La demostración es una **captura guardada de fuentes oficiales**, no una consulta actual. Conserva fecha, enlaces y alcance.
+
+## Instalar en Claude Code
+
+```text
+/plugin install ine-evidence --marketplace samihalawa/ine-evidence
+```
+
+O desde terminal:
 
 ```bash
 claude plugin marketplace add samihalawa/ine-evidence
 claude plugin install ine-evidence@ine-evidence
 ```
 
-Inside a Claude Code session (v2.1.275+), the one-step equivalent is:
+Después, pregunta en lenguaje natural o invoca `/ine-evidence:ine-evidence`.
 
-```text
-/plugin install ine-evidence --marketplace samihalawa/ine-evidence
-```
+## Ver un resultado sin conexión
 
-The adapter requires Python 3.11+ and access to its official data providers. No separate product account, API key, payment or publisher-hosted service is required. A host that cannot execute Python may use the workflow with its available native browsing and supplied documents. The package does not grant unavailable host permissions or network access.
-
-## Use
-
-Ask: “Find the current INE series for my question, with its units and latest observation date.”
-
-In ChatGPT, the workflow uses native browsing or your supplied documents. Local Python networking is not assumed. In Claude Code/Codex, use `skills/ine-evidence/scripts/run.py` to retrieve official public data.
+Desde una copia de este repositorio:
 
 ```bash
-python3 skills/ine-evidence/scripts/run.py list
-python3 skills/ine-evidence/scripts/run.py call ine_operations --json '{"query": "precios consumo", "limit": 10}'
+python3 skills/ine-evidence/scripts/run.py demo
+python3 skills/ine-evidence/scripts/run.py demo --format html --output ejemplo.html
 ```
 
-## Limits
+## Consultar y guardar un informe
 
-No proprietary economic feed, forecast engine, investment advice, unsupported latest-data claims or silent joins across incompatible series.
+```bash
+python3 skills/ine-evidence/scripts/run.py report ine_series --json '{"series_code": "IPC251852", "last": 3}'
+```
 
-No source credentials, paid API calls, subscriptions, account database or publisher telemetry are bundled. No background jobs are started.
+Añade `--format html --output informe.html` o `--format json`. No se sobrescriben archivos por defecto. `doctor` comprueba el entorno local sin consultar proveedores.
 
-## Public source and submission
+## Dónde funciona
 
-This repository is the complete standalone source. [Claude submission information](SUBMISSION.md), [privacy](PRIVACY.md), [terms](TERMS.md), [support](SUPPORT.md) and [security](SECURITY.md) are included.
+| Entorno | Comportamiento |
+|---|---|
+| Claude Code / Codex con Python y red autorizada | Adaptadores e informes ejecutables. |
+| ChatGPT con navegación/archivos | Flujo con herramientas nativas disponibles; no es un MCP alojado. |
+| Sin red | Demo guardada o documentos aportados; no datos actuales inventados. |
 
-This is an independent skills plugin by Sami Halawa, not an official government service or an approved Anthropic directory listing. Public repository publication, successful installation and directory approval are separate states.
+## Alcance real
 
-## Development verification
+No ofrece previsiones ni asesoramiento de inversión. Una serie disponible puede estar discontinuada o usar una base antigua. No une series incompatibles ni infiere actualidad por disponibilidad.
 
-Run `python3 scripts/check_package.py` and `claude plugin validate --strict .claude-plugin/plugin.json`. An optional GitHub Actions template is provided at `ci/validate.yml`. It is not active: the publishing credential has repository access but no workflow-write permission. Installation is verified directly in a fresh Claude configuration. These checks do not establish model-based user acceptance or continued availability of government services. See `evidence/claude-validation.json` and `evidence/live-probes.json` for the exact observed state; a CI template is not a completed CI run.
+## Verificación
+
+```bash
+python3 -m unittest discover -s tests -v
+python3 scripts/check_package.py
+claude plugin validate --strict .claude-plugin/plugin.json
+claude plugin validate --strict .
+```
+
+[Mejoras y crítica](CHANGELOG.md) · [Evidencia versionada](evidence/) · [Revisión de Claude](SUBMISSION.md). Los tests no equivalen a adopción. `ci/validate.yml` es una plantilla inactiva.
+
+**English:** An independent workflow for Spanish official data, with a self-contained Python adapter, offline example and readable reports. Answer language follows the user.
+
+**Sami Halawa** · Software independiente; sin afiliación oficial. [Privacidad](PRIVACY.md) · [Condiciones](TERMS.md) · [Soporte](SUPPORT.md) · [Seguridad](SECURITY.md).

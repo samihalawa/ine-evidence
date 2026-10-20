@@ -1,8 +1,8 @@
 {
   "name": "ine-evidence",
   "displayName": "INE Evidence",
-  "version": "0.1.2",
-  "description": "Find the correct INE series and answer with its values, definitions, dates and limitations intact.",
+  "version": "0.2.0",
+  "description": "Encuentra series del INE y presenta sus cifras con periodo, unidad, definición y límites de comparación.",
   "author": {
     "name": "Sami Halawa",
     "email": "sami@samihalawa.com"
@@ -10,8 +10,11 @@
   "license": "MIT",
   "keywords": [
     "spain",
-    "official-data",
-    "read-only"
+    "ine",
+    "estadisticas",
+    "ipc",
+    "datos-economicos",
+    "series-temporales"
   ],
   "homepage": "https://github.com/samihalawa/ine-evidence/blob/main/README.md",
   "repository": "https://github.com/samihalawa/ine-evidence",

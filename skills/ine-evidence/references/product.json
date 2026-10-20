@@ -1,0 +1,36 @@
+{
+  "name": "INE Evidence",
+  "promise": "La cifra correcta, con su contexto.",
+  "audience": "Analistas, periodistas, docentes y consultoras.",
+  "description": "Encuentra series del INE y presenta sus cifras con periodo, unidad, definición y límites de comparación.",
+  "short": "Estadísticas con contexto",
+  "source": "INE",
+  "keywords": [
+    "ine",
+    "estadisticas",
+    "ipc",
+    "datos-economicos",
+    "series-temporales"
+  ],
+  "prompts": [
+    "Encuentra la serie adecuada para comparar el IPC y explica su base y periodo.",
+    "Comprueba si esta serie sigue actualizada antes de llamarla el dato más reciente.",
+    "Presenta estos datos sin convertir nulos o valores confidenciales en cero."
+  ],
+  "benefits": [
+    "Descubre operaciones, tablas y series sin inventar códigos.",
+    "Conserva los resultados dentro de cada página.",
+    "Distingue periodo observado de fecha de consulta."
+  ],
+  "critique": "El JSON exigía interpretar códigos y el límite local ocultaba series. Un ejemplo histórico podía confundirse con un dato vigente.",
+  "change": "Tablas legibles, offsets explícitos, periodos visibles y demostración etiquetada como histórica.",
+  "limits": "No ofrece previsiones ni asesoramiento de inversión. Una serie disponible puede estar discontinuada o usar una base antigua. No une series incompatibles ni infiere actualidad por disponibilidad.",
+  "tool": "ine_series",
+  "args": {
+    "series_code": "IPC251852",
+    "last": 3
+  },
+  "extra": "Descubre con ine_operations → ine_tables → ine_table_series. Usa next_offset antes de avanzar next_page. IPC251852 es un ejemplo histórico, no una selección del IPC vigente. Conserva unidades, base, ajuste y confidencialidad.",
+  "slug": "ine-evidence",
+  "version": "0.2.0"
+}
