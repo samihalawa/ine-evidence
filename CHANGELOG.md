@@ -6,6 +6,8 @@
 
 **Improvement:** La nueva función ine_series_change lleva al usuario a una salida más directamente utilizable; Tablas legibles, offsets explícitos, periodos visibles y demostración etiquetada como histórica.
 
+Bounded PLACSP fallback: retain at most 8 MiB, parse only complete prefix entries, identify prefix hashes and unread entries/tombstones, and block continuation before the unread suffix. The general fetch limit remains unchanged.
+
 Shared changes: Spanish-first outcome-led onboarding; offline official-source snapshots explicitly labelled as examples; readable Markdown and print-friendly HTML; `doctor`; bounded input and overwrite protection; escaped report content; safer XML; explicit source/TLS errors; pagination and parser regression tests.
 
 No adoption uplift, model-based acceptance, hosted MCP service, active CI or official directory approval is claimed.
