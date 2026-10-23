@@ -1,14 +1,10 @@
-# Claude review — INE Evidence 0.2.0
+# Claude review — INE Evidence 0.3.0
 
 Publisher: Sami Halawa · Contact: sami@samihalawa.com
 
 Repository: https://github.com/samihalawa/ine-evidence
 
 Plugin at repository root. Stable identity: `ine-evidence`.
-
-Public product page: https://samihalawa.github.io/ine-evidence/
-
-Saved official-source report: https://samihalawa.github.io/ine-evidence/demo.html
 
 ## Listing
 

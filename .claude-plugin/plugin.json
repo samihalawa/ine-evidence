@@ -1,7 +1,7 @@
 {
   "name": "ine-evidence",
   "displayName": "INE Evidence",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Encuentra series del INE y presenta sus cifras con periodo, unidad, definición y límites de comparación.",
   "author": {
     "name": "Sami Halawa",

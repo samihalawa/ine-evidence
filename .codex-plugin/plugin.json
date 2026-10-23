@@ -35,6 +35,6 @@
   "license": "MIT",
   "name": "ine-evidence",
   "skills": "./skills",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "homepage": "https://samihalawa.github.io/ine-evidence/"
 }

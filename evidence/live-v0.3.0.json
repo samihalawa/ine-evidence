@@ -1,0 +1,132 @@
+{
+  "version": "0.3.0",
+  "checked_at": "2026-10-20T16:59:24.554435+00:00",
+  "core_sha256": "303c3b3fd75b1544cf7120d5d37ef61f7d2445e508381af01ef8a25b6df6d530",
+  "scope": "Official-provider adapter smoke checks; not model-based task acceptance or adoption.",
+  "passed": 5,
+  "total": 5,
+  "tests": [
+    {
+      "tool": "ine_series_change",
+      "arguments": {
+        "series_code": "IPC251852",
+        "last": 5
+      },
+      "ok": true,
+      "duration_seconds": 0.91,
+      "coverage": {
+        "latest_observation_date": "2025-12-01",
+        "latest_observation_age_days": 323,
+        "observations_requested": 5,
+        "non_confidential_numeric_periods": 5
+      },
+      "sources": [
+        {
+          "url": "https://servicios.ine.es/wstempus/js/ES/DATOS_SERIE/IPC251852?nult=5&tip=AM",
+          "retrieved_at": "2026-10-20T16:59:02.643755+00:00",
+          "sha256": "d87e76233954a6d02b24b6b7e6db47616ef9dfad10d6ca64ee8f100cb808c92a",
+          "cache_hit": false
+        }
+      ],
+      "error": null
+    },
+    {
+      "tool": "ine_series",
+      "arguments": {
+        "series_code": "IPC251852",
+        "last": 3
+      },
+      "ok": true,
+      "duration_seconds": 0.81,
+      "coverage": {
+        "latest_observation_date": "2025-12-01",
+        "latest_observation_age_days": 323
+      },
+      "sources": [
+        {
+          "url": "https://servicios.ine.es/wstempus/js/ES/DATOS_SERIE/IPC251852?nult=3&tip=AM",
+          "retrieved_at": "2026-10-20T16:59:07.005532+00:00",
+          "sha256": "5d6272146f1093ddb1a713183ecc2e3dad6f9d536511de4370e1a240821fde03",
+          "cache_hit": false
+        }
+      ],
+      "error": null
+    },
+    {
+      "tool": "ine_operations",
+      "arguments": {
+        "query": "precios consumo",
+        "limit": 10
+      },
+      "ok": true,
+      "duration_seconds": 1.95,
+      "coverage": {
+        "matches": 2,
+        "truncated": false,
+        "offset": 0,
+        "next_offset": null
+      },
+      "sources": [
+        {
+          "url": "https://servicios.ine.es/wstempus/js/ES/OPERACIONES_DISPONIBLES",
+          "retrieved_at": "2026-10-20T16:59:12.605109+00:00",
+          "sha256": "3dd21a88f99d4eabdccc2a92fafadbb17cb0a928d516c269872fec6bc8bbe2be",
+          "cache_hit": false
+        }
+      ],
+      "error": null
+    },
+    {
+      "tool": "ine_tables",
+      "arguments": {
+        "operation_id": 25,
+        "limit": 10
+      },
+      "ok": true,
+      "duration_seconds": 1.93,
+      "coverage": {
+        "matches": 59,
+        "truncated": true,
+        "offset": 0,
+        "next_offset": 10
+      },
+      "sources": [
+        {
+          "url": "https://servicios.ine.es/wstempus/js/ES/TABLAS_OPERACION/25",
+          "retrieved_at": "2026-10-20T16:59:23.620916+00:00",
+          "sha256": "98404d35c8cb453c3bb8155aab4a4c521b20f72f254986f53c0aed89cf4fa7d8",
+          "cache_hit": false
+        }
+      ],
+      "error": null
+    },
+    {
+      "tool": "ine_table_series",
+      "arguments": {
+        "table_id": 24077,
+        "limit": 3
+      },
+      "ok": true,
+      "duration_seconds": 0.35,
+      "coverage": {
+        "page": 1,
+        "provider_records": 1,
+        "matches_on_page": 1,
+        "truncated": false,
+        "offset": 0,
+        "next_offset": null,
+        "next_page": 2,
+        "exhaustive": false
+      },
+      "sources": [
+        {
+          "url": "https://servicios.ine.es/wstempus/js/ES/SERIES_TABLA/24077?page=1",
+          "retrieved_at": "2026-10-20T16:59:23.970089+00:00",
+          "sha256": "e0eec56e4b1053f559fc3369422e2e212229f4d9c99909fe8b3ca7963441ac97",
+          "cache_hit": false
+        }
+      ],
+      "error": null
+    }
+  ]
+}

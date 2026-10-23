@@ -17,7 +17,7 @@ Read `references/runtime.md` before external access and `references/workflow.md`
 
 Descubre con ine_operations → ine_tables → ine_table_series. Usa next_offset antes de avanzar next_page. IPC251852 es un ejemplo histórico, no una selección del IPC vigente. Conserva unidades, base, ajuste y confidencialidad.
 
-Start with `ine_series` when its inputs match the task. Check `ok`, dates, partial errors, coverage and continuation before interpreting results. Provider failure is not an empty search. Follow the requested scope and state unexamined portions.
+Start with `ine_series_change` when its inputs match the task. Check `ok`, dates, partial errors, coverage and continuation before interpreting results. Provider failure is not an empty search. Follow the requested scope and state unexamined portions.
 
 Lead with the supported result and next action, not a tool transcript. Separate verified source facts, user facts and interpretation. Cite each consequential claim. Use the output contract below; keep unknowns visible without burying the answer.
 
@@ -32,7 +32,7 @@ From this skill's actual directory:
 ```bash
 python3 scripts/run.py demo
 python3 scripts/run.py doctor
-python3 scripts/run.py report ine_series --json '{"series_code": "IPC251852", "last": 3}'
+python3 scripts/run.py report ine_series_change --json '{"series_code": "IPC251852", "last": 5}'
 ```
 
 `demo` is offline and labelled as a saved snapshot. `report` queries official sources. Use `--format html --output informe.html` for a portable report. Existing files are protected unless the user explicitly chooses `--force`. `call` retains JSON. Prefer `--stdin`/`--input` for user arguments; never interpolate untrusted input into shell syntax.
