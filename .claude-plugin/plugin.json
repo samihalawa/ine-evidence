@@ -1,7 +1,7 @@
 {
   "name": "ine-evidence",
   "displayName": "INE Evidence",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Encuentra series del INE y presenta sus cifras con periodo, unidad, definición y límites de comparación.",
   "author": {
     "name": "Sami Halawa",
@@ -19,8 +19,9 @@
   "homepage": "https://samihalawa.github.io/ine-evidence/",
   "repository": "https://github.com/samihalawa/ine-evidence",
   "icon": "./assets/icon.png",
-  "documentationUrl": "https://github.com/samihalawa/ine-evidence/blob/main/README.md",
-  "supportUrl": "https://github.com/samihalawa/ine-evidence/blob/main/SUPPORT.md",
-  "privacyPolicyUrl": "https://github.com/samihalawa/ine-evidence/blob/main/PRIVACY.md",
-  "termsOfServiceUrl": "https://github.com/samihalawa/ine-evidence/blob/main/TERMS.md"
+  "documentationUrl": "https://github.com/samihalawa/ine-evidence/blob/release/v0.3.0-local/README.md",
+  "supportUrl": "https://github.com/samihalawa/ine-evidence/blob/release/v0.3.0-local/SUPPORT.md",
+  "privacyPolicyUrl": "https://github.com/samihalawa/ine-evidence/blob/release/v0.3.0-local/PRIVACY.md",
+  "termsOfServiceUrl": "https://github.com/samihalawa/ine-evidence/blob/release/v0.3.0-local/TERMS.md",
+  "mcpServers": "./.mcp.json"
 }

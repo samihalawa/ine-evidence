@@ -1,0 +1,224 @@
+{
+  "server": "ine-evidence",
+  "version": "0.3.1",
+  "tools": [
+    {
+      "name": "ine_operations",
+      "title": "ine operations",
+      "description": "Discover official INE statistical operations by name. Use returned operation IDs; do not guess table IDs or series codes.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "default": ""
+          },
+          "limit": {
+            "type": "integer",
+            "default": 30
+          },
+          "offset": {
+            "type": "integer",
+            "default": 0
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "ine_tables",
+      "title": "ine tables",
+      "description": "List tables for an INE operation, optionally filtering titles. Retrieves catalog metadata, not observations.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "operation_id": {
+            "type": "integer"
+          },
+          "query": {
+            "type": "string",
+            "default": ""
+          },
+          "limit": {
+            "type": "integer",
+            "default": 30
+          },
+          "offset": {
+            "type": "integer",
+            "default": 0
+          }
+        },
+        "required": [
+          "operation_id"
+        ],
+        "additionalProperties": false
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "ine_table_series",
+      "title": "ine table series",
+      "description": "Discover series codes in one INE table page. Native provider pagination begins at page 1; output may be filtered locally.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "table_id": {
+            "type": "integer"
+          },
+          "page": {
+            "type": "integer",
+            "default": 1
+          },
+          "query": {
+            "type": "string",
+            "default": ""
+          },
+          "limit": {
+            "type": "integer",
+            "default": 20
+          },
+          "offset": {
+            "type": "integer",
+            "default": 0
+          }
+        },
+        "required": [
+          "table_id"
+        ],
+        "additionalProperties": false
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "ine_series",
+      "title": "ine series",
+      "description": "Retrieve INE series observations with metadata, source dates and an age warning. 'Latest in this series' does not imply the current statistical base.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "series_code": {
+            "type": "string"
+          },
+          "last": {
+            "type": "integer",
+            "default": 12
+          }
+        },
+        "required": [
+          "series_code"
+        ],
+        "additionalProperties": false
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "ine_series_change",
+      "title": "ine series change",
+      "description": "Compare the last two non-confidential numerical observations in an INE series, without inventing frequency or annualised growth.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "series_code": {
+            "type": "string"
+          },
+          "last": {
+            "type": "integer",
+            "default": 12
+          }
+        },
+        "required": [
+          "series_code"
+        ],
+        "additionalProperties": false
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "ine_evidence_demo",
+      "title": "INE Evidence · ejemplo guardado",
+      "description": "Read the bundled dated example without network access. It is historical, never live.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "ine_evidence_report",
+      "title": "INE Evidence · informe",
+      "description": "Return a deterministic Markdown, HTML or JSON report for one product operation or the saved example. Writes no files; preserve source dates and partial coverage.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "operation": {
+            "type": "string",
+            "enum": [
+              "ine_operations",
+              "ine_tables",
+              "ine_table_series",
+              "ine_series",
+              "ine_series_change",
+              "ine_evidence_demo"
+            ]
+          },
+          "arguments": {
+            "type": "object",
+            "default": {}
+          },
+          "format": {
+            "type": "string",
+            "enum": [
+              "markdown",
+              "html",
+              "json"
+            ],
+            "default": "markdown"
+          }
+        },
+        "required": [
+          "operation"
+        ],
+        "additionalProperties": false
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": true
+      }
+    }
+  ]
+}
