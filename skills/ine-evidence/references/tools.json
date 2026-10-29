@@ -18,5 +18,10 @@
     "name": "ine_series",
     "signature": "(series_code: 'str', last: 'int' = 12) -> 'dict[str, Any]'",
     "description": "Retrieve INE series observations with metadata, source dates and an age warning. 'Latest in this series' does not imply the current statistical base."
+  },
+  {
+    "name": "ine_series_change",
+    "signature": "(series_code: 'str', last: 'int' = 12) -> 'dict[str, Any]'",
+    "description": "Compare the last two non-confidential numerical observations in an INE series, without inventing frequency or annualised growth."
   }
 ]

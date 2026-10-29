@@ -1,84 +1,58 @@
 {
-  "tool": "ine_series",
+  "tool": "ine_series_change",
   "arguments": {
     "series_code": "IPC251852",
-    "last": 3
+    "last": 5
   },
-  "captured_at": "2026-10-20T16:20:04.935662+00:00",
+  "captured_at": "2026-10-20T16:59:24.548868+00:00",
   "note": "Saved public-source example, not a current query or user-owned record.",
   "result": {
     "ok": true,
     "data": {
-      "COD": "IPC251852",
-      "Nombre": "Nacional. Índice general. Índice. ",
-      "T3_Unidad": "Índice",
-      "T3_Escala": " ",
-      "Notas": [
-        {
-          "texto": "https://www.ine.es/dyngs/INEbase/es/operacion.htm?c=Estadistica_C&cid=1254736176802&menu=ultiDatos&idp=1254735976607#~#https://www.ine.es/consul/serie.do?s=IPC206446&nult=100&TB_iframe=true&position=center&width=700&height=500&L=0&nocab=1 ",
-          "Fk_TipoNota": 6,
-          "textoTipo": null
-        }
-      ],
-      "MetaData": [
-        {
-          "Id": 16473,
-          "T3_Variable": "Totales Territoriales",
-          "Nombre": "Nacional",
-          "Codigo": "00"
-        },
-        {
-          "Id": 304092,
-          "T3_Variable": "Grupos ECOICOP",
-          "Nombre": "Índice general",
-          "Codigo": "00"
-        },
-        {
-          "Id": 83,
-          "T3_Variable": "Índices y Tasas",
-          "Nombre": "Índice",
-          "Codigo": "0"
-        }
-      ],
-      "Data": [
-        {
-          "Fecha": "2025-10-01T00:00:00.000+02:00",
-          "T3_TipoDato": "Definitivo",
-          "T3_Periodo": "M10",
-          "Anyo": 2025,
-          "Valor": 119.301
-        },
-        {
-          "Fecha": "2025-11-01T00:00:00.000+01:00",
-          "T3_TipoDato": "Definitivo",
-          "T3_Periodo": "M11",
-          "Anyo": 2025,
-          "Valor": 119.532
-        },
-        {
-          "Fecha": "2025-12-01T00:00:00.000+01:00",
-          "T3_TipoDato": "Definitivo",
-          "T3_Periodo": "M12",
-          "Anyo": 2025,
-          "Valor": 119.942
-        }
-      ]
+      "series_code": "IPC251852",
+      "series_name": "Nacional. Índice general. Índice. ",
+      "unit": "Índice",
+      "scale": " ",
+      "older_period": "2025-11-01",
+      "newer_period": "2025-12-01",
+      "older_value": 119.532,
+      "newer_value": 119.942,
+      "absolute_change": 0.4099999999999966,
+      "percentage_change": 0.34300438376334086,
+      "percentage_change_unavailable_reason": null,
+      "older_record": {
+        "Fecha": "2025-11-01T00:00:00.000+01:00",
+        "T3_TipoDato": "Definitivo",
+        "T3_Periodo": "M11",
+        "Anyo": 2025,
+        "Valor": 119.532
+      },
+      "newer_record": {
+        "Fecha": "2025-12-01T00:00:00.000+01:00",
+        "T3_TipoDato": "Definitivo",
+        "T3_Periodo": "M12",
+        "Anyo": 2025,
+        "Valor": 119.942
+      }
     },
     "sources": [
       {
-        "url": "https://servicios.ine.es/wstempus/js/ES/DATOS_SERIE/IPC251852?nult=3&tip=AM",
-        "retrieved_at": "2026-10-20T16:19:45.393891+00:00",
-        "sha256": "5d6272146f1093ddb1a713183ecc2e3dad6f9d536511de4370e1a240821fde03",
+        "url": "https://servicios.ine.es/wstempus/js/ES/DATOS_SERIE/IPC251852?nult=5&tip=AM",
+        "retrieved_at": "2026-10-20T16:59:02.643755+00:00",
+        "sha256": "d87e76233954a6d02b24b6b7e6db47616ef9dfad10d6ca64ee8f100cb808c92a",
         "cache_hit": false
       }
     ],
     "coverage": {
       "latest_observation_date": "2025-12-01",
-      "latest_observation_age_days": 323
+      "latest_observation_age_days": 323,
+      "observations_requested": 5,
+      "non_confidential_numeric_periods": 5
     },
     "warnings": [
       "Preserve units, scale, geography, frequency, base year, seasonal adjustment and provisional/confidential flags. Never compare unlike series or treat missing values as zero. Observation dates describe statistical periods, not retrieval dates.",
-      "The newest observation in this series is over 120 days old. This can be normal for annual series or indicate a discontinued/rebased series; check the operation's current tables before calling it current."
+      "The newest observation in this series is over 120 days old. This can be normal for annual series or indicate a discontinued/rebased series; check the operation's current tables before calling it current.",
+      "This is a two-observation arithmetic comparison, not an annualised rate or a statement about statistical significance. Check units, base, adjustments, provisional flags and comparability before interpreting it."
     ],
     "notice": "Independent software by Sami Halawa; not an official government service. Verify consequential decisions in the official source."
   }
