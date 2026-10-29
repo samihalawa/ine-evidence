@@ -9,15 +9,14 @@
     "category": "Productivity",
     "composerIcon": "./assets/icon.png",
     "defaultPrompt": [
-      "Encuentra la serie adecuada para comparar el IPC y explica su base y periodo.",
-      "Comprueba si esta serie sigue actualizada antes de llamarla el dato más reciente.",
-      "Presenta estos datos sin convertir nulos o valores confidenciales en cero."
+      "Find the current INE series for my question, with its units and latest observation date.",
+      "Compare these official Spanish statistics without mixing bases or periods."
     ],
     "developerName": "Sami Halawa",
     "displayName": "INE Evidence",
-    "logo": "./assets/icon.png",
-    "longDescription": "Encuentra series del INE y presenta sus cifras con periodo, unidad, definición y límites de comparación.\n\nAnalistas, periodistas, docentes y consultoras. Descubre operaciones, tablas y series sin inventar códigos. Conserva los resultados dentro de cada página. Distingue periodo observado de fecha de consulta.\n\nEjemplos guardados sin conexión e informes HTML/Markdown/JSON. Sin cuenta adicional, claves API ni servicio propio. Claude Code invoca los adaptadores mediante el MCP local declarado (Python 3.11+ y red autorizada). Otros anfitriones utilizan únicamente sus herramientas nativas disponibles, sin ejecutar scripts como alternativa.\n\nNo ofrece previsiones ni asesoramiento de inversión. Una serie disponible puede estar discontinuada o usar una base antigua. No une series incompatibles ni infiere actualidad por disponibilidad.",
-    "shortDescription": "Estadísticas con contexto",
+    "logo": "./assets/logo.png",
+    "longDescription": "Find INE tables and series and calculate traceable changes while preserving units, dates and missing values.\n\nUse bounded read-only official-source queries, a clearly dated offline example, and source-linked Markdown, HTML or JSON reports. Review returned dates, identifiers, provenance, errors and unexamined coverage before acting. No official affiliation, eligibility, legal, title, solvency or reuse-rights certification is claimed.\n\nRuns a bundled local stdio MCP on compatible desktop hosts with Python 3.11+ and authorized network access. No API key, account, dependency installation, hosted publisher service, telemetry or purchase functionality is provided. Reports return text without writing files. An unavailable local server is disclosed; scripts are never an execution fallback. This package does not create a web/mobile remote connection.",
+    "shortDescription": "Trace official Spanish data",
     "websiteURL": "https://samihalawa.github.io/ine-evidence/",
     "supportURL": "https://github.com/samihalawa/ine-evidence/blob/release/v0.3.0-local/SUPPORT.md",
     "privacyPolicyURL": "https://github.com/samihalawa/ine-evidence/blob/release/v0.3.0-local/PRIVACY.md",
@@ -35,6 +34,8 @@
   "license": "MIT",
   "name": "ine-evidence",
   "skills": "./skills",
-  "version": "0.3.1",
-  "homepage": "https://samihalawa.github.io/ine-evidence/"
+  "version": "0.4.0",
+  "homepage": "https://samihalawa.github.io/ine-evidence/",
+  "requires_local_executor": true,
+  "mcpServers": "./mcp.json"
 }

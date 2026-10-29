@@ -1,0 +1,20 @@
+{
+  "name": "ine-evidence",
+  "interface": {
+    "displayName": "INE Evidence"
+  },
+  "plugins": [
+    {
+      "name": "ine-evidence",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
