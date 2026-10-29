@@ -1,0 +1,14 @@
+**
+!Dockerfile
+!skills/
+!skills/ine-evidence/
+!skills/ine-evidence/scripts/
+!skills/ine-evidence/scripts/**
+!skills/ine-evidence/references/
+!skills/ine-evidence/references/**
+!LICENSE
+!SECURITY.md
+!PRIVACY.md
+!SUPPORT.md
+**/__pycache__/
+**/*.pyc
