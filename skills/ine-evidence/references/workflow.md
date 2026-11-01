@@ -1,13 +1,12 @@
-# Detailed source-specific workflow
+# Flujo de evidencia estadística
 
+1. Define indicador, territorio, población, periodo, frecuencia, unidad y si se necesita un nivel, una tasa o una variación. Usa la navegación autorizada del anfitrión para localizar la operación y tabla en el INE; sigue sus enlaces a las series. Conserva el título y el identificador que realmente aparezcan. No adivines códigos ni selecciones automáticamente el código histórico IPC251852.
+2. Lee notas metodológicas y metadatos: unidad y escala, año base, población, delimitación geográfica, frecuencia, ajustes estacionales/calendario y marcas provisionales, revisadas o confidenciales. Anota los filtros y periodos seleccionados. Una página filtrada o un extracto del anfitrión no demuestra que se haya revisado toda la tabla.
+3. Para decir «último dato», comprueba la tabla actualmente mantenida, la última observación y la publicación o calendario oficial de difusión. Separa periodo de referencia, fecha de publicación/revisión y fecha de consulta. Una estadística anual puede ser correcta aunque no tenga una observación del mes actual; un enlace que responde no acredita que una serie antigua siga vigente.
+4. Compara solo observaciones con definición, territorio, población, unidad, escala, frecuencia, base y tratamiento estacional compatibles. Si existe un cambio de base, usa la serie enlazada o el procedimiento publicado por el INE; no empalmes índices por tu cuenta. Distingue variación mensual, interanual, acumulada y promedio anual.
+5. Conserva nulos, ausencias, ceros, valores no disponibles y secreto estadístico como estados distintos. Para un cambio absoluto usa nuevo−anterior; para variación relativa, (nuevo/anterior−1)×100 solo con denominador válido y comparable. Para tasas expresadas en %, diferencia porcentajes de puntos porcentuales. Expón entradas y fórmula, y atribuye el cálculo al análisis del asistente, no al INE si no lo publica.
+6. Usa únicamente las capacidades nativas autorizadas del anfitrión para leer, calcular o presentar. Si solo se dispone de documentos del usuario, identifica su procedencia y fecha; no los conviertas en prueba de actualidad. Si faltan notas o filtros, marca la comparación como no verificada.
 
-1. Define the statistical question: metric, geography, population, period, frequency, unit, level/change rate, adjustment and desired comparison. Use `ine_operations`, then `ine_tables`, then `ine_table_series` to discover IDs. Do not guess a series code from memory. A filtered series page is not the whole table; follow explicit pagination when needed.
-2. Retrieve observations with `ine_series`. Preserve the source's unit, scale, base year, frequency, reference population, adjustment, provisional flags and confidentiality. Display the latest observation period separately from retrieval time. A series ending months ago can be discontinued or rebased even though the API works.
-3. Before answering 'latest', check the current operation/table and latest observation date. The built-in age warning is a signal to verify, not proof an annual statistic is stale. Never substitute a historical CPI base for the current series without explanation or splice bases without the official linking method.
-4. Keep null, missing and confidential observations distinct from zero. For changes, state the formula and inputs, distinguish percentages from percentage points and use like-for-like series. Do not aggregate incompatible territorial definitions, seasonal treatments, units or populations.
-5. Return a compact evidence table or chart with exact source links and a short interpretation. Label your own calculations and uncertainty. Do not claim the plugin is the official INE service or a statistical certification.
+## Entrega
 
-## Output
-
-Metric definition; code and table/operation; observation period versus retrieval date; unit/base/adjustment; values; transparent calculations; source notes and limitations.
-
+Una conclusión breve; operación/tabla/serie; periodo y publicación frente a consulta; territorio/población/unidad/base/ajustes; tabla de valores; cálculo explícito cuando corresponda; enlaces a datos y metodología; cobertura y límites. No declares completa una búsqueda si faltan páginas o periodos. Un gráfico opcional debe conservar unidades y no esconder discontinuidades.

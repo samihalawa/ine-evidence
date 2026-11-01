@@ -7,99 +7,52 @@
 Encuentra series del INE y presenta sus cifras con periodo, unidad, definición y límites de comparación.
 
 **Para:** Analistas, periodistas, docentes y consultoras.
+**Fuentes:** INE · **Paquete de instrucciones y referencias** · **MIT**
 
-**Fuente:** INE · **Sin cuenta adicional ni API key** · **Python 3.11+** · **MIT**
+## Qué obtienes
 
-### Qué obtienes
+- Encuentra operaciones, tablas y series a partir de enlaces e identificadores oficiales.
+- Explica unidades, base, ajustes y límites de comparación.
+- Distingue el periodo observado de la publicación y la consulta.
 
-- Descubre operaciones, tablas y series sin inventar códigos.
-- Conserva los resultados dentro de cada página.
-- Distingue periodo observado de fecha de consulta.
-
-### Pruébalo con una pregunta
+## Pruébalo con una pregunta
 
 > Encuentra la serie adecuada para comparar el IPC y explica su base y periodo.
 
-También: “Comprueba si esta serie sigue actualizada antes de llamarla el dato más reciente.”
+También: «Comprueba si esta serie sigue actualizada antes de llamarla el dato más reciente.»
 
-[Ver el informe de ejemplo](examples/demo.md) · [Código de la página del producto](docs/index.html) · [Flujo completo](skills/ine-evidence/references/workflow.md)
+El asistente sigue el [flujo de revisión](skills/ine-evidence/references/workflow.md) usando únicamente la búsqueda, navegación y lectura de archivos nativas que el anfitrión tenga autorizadas. Reutiliza los documentos que aporte el usuario y distingue evidencia, cálculos e interpretación. La habilidad no añade permisos ni una fuente de datos conectada propia.
 
-La demostración es una **captura guardada de fuentes oficiales**, no una consulta actual. Conserva fecha, enlaces y alcance.
+## Instalación y uso
 
-## Instalar el versión 0.4.0 en Claude Code
+Instala la versión de instrucciones en el catálogo o mediante la importación de paquetes que admita tu anfitrión. Selecciona **INE Evidence** o plantea una pregunta pertinente. La publicación o aceptación de cada directorio es un estado independiente; este documento describe el paquete 0.5.0 y no acredita su aprobación.
 
-```text
-/plugin install ine-evidence --marketplace https://github.com/samihalawa/ine-evidence.git#release/v0.3.0-local
-```
+No se requiere configurar procesos locales, dependencias, credenciales o servicios para usar las instrucciones. Con navegación autorizada, consulta las [fuentes oficiales](skills/ine-evidence/references/sources.md). Si solo hay lectura de archivos, revisa los documentos disponibles. Sin acceso actual, limita la respuesta a esas pruebas o al ejemplo guardado, dejando clara su fecha.
 
-O desde terminal:
+## Ejemplo histórico
 
-```bash
-claude plugin marketplace add https://github.com/samihalawa/ine-evidence.git#release/v0.3.0-local
-claude plugin install ine-evidence@ine-evidence
-```
+[Ver el informe guardado](examples/demo.md) · [Página de muestra](docs/mcp-preview.html) · [Registro histórico](skills/ine-evidence/references/demo.json)
 
-Después, pregunta en lenguaje natural o invoca `/ine-evidence:ine-evidence`.
+La captura se conserva con su fecha original, fuentes y límites. Los campos técnicos heredados describen la captura anterior; no son funciones de esta versión ni instrucciones para ejecutar nada. El ejemplo no acredita valores, oportunidades, descargas o estados vigentes.
 
-## Instalar en Codex
+## Resultado útil y alcance
 
-```bash
-codex plugin marketplace add https://github.com/samihalawa/ine-evidence --ref release/v0.3.0-local
-codex plugin add ine-evidence@ine-evidence
-```
+Identifica la pregunta estadística y busca en las páginas oficiales del INE la operación, tabla y serie pertinentes. Verifica los metadatos antes de comparar valores. Entrega una tabla o ficha con identificadores, fuentes y fechas, el alcance realmente examinado y una comprobación siguiente. Si hay documentos o páginas no leídos, indícalo. Un fallo de acceso no es una búsqueda vacía.
 
-El paquete declara su MCP local en `mcp.json`; Claude utiliza `.mcp.json`. La instalación local y la disponibilidad en un directorio público son estados diferentes. OpenAI limita la publicación pública de MCP locales a organizaciones habilitadas; una carga privada no demuestra esa habilitación ni crea una conexión web/móvil.
+Una serie accesible puede estar discontinuada o usar una base antigua. No enlaza bases ni compara poblaciones o ajustes incompatibles sin un método oficial. No ofrece previsiones ni asesoramiento de inversión.
 
-## Instalar en Grok Build
+La redacción y cualquier exportación se realizan con las capacidades nativas del anfitrión; no se promete un informe idéntico o una consulta automatizada. Solo guarda archivos cuando lo solicite el usuario. [Uso y límites](skills/ine-evidence/references/runtime.md).
 
-```bash
-grok plugin install samihalawa/ine-evidence@release/v0.3.0-local
-```
+## Datos y privacidad
 
-Grok utiliza la configuración compatible `.mcp.json`; conserva el mismo MCP local y sus límites. La entrada en el catálogo oficial requiere la aceptación de sus mantenedores.
+Las consultas nativas a proveedores públicos pueden enviar términos de búsqueda e identificadores, y revelar la dirección de red del entorno de consulta. Comparte solo los datos públicos mínimos del encargo. La conversación, los adjuntos y los archivos guardados se rigen por las políticas del anfitrión y del usuario. El paquete no opera una recogida de datos, una caché ni un servicio de consulta propios. [Privacidad](PRIVACY.md).
 
-## Ejemplo sin conexión
+## Verificación e identidad
 
-Pide al MCP declarado `ine-evidence` la herramienta `ine_evidence_demo`. El ejemplo conserva su fecha y sus fuentes; nunca se presenta como una consulta actual.
+[Revisión editorial](DEVELOPMENT.md) · [Escenarios de revisión](skills/ine-evidence/references/examples.md) · [Información para revisores](SUBMISSION.md).
 
-## Consulta e informe
+Un símbolo sencillo y una pequeña bandera española identifican el producto; no son un escudo ni un sello oficial. [Logo](assets/logo.png) · [Icono](assets/icon.png). Software e instrucciones independientes de Sami Halawa, sin afiliación gubernamental.
 
-El anfitrión invoca `ine_series_change` con los argumentos descritos en [Esquemas MCP](skills/ine-evidence/references/mcp-tools.json). Para obtener un informe determinista, utiliza `ine_evidence_report` con la operación elegida, sus argumentos y el formato `markdown`, `html` o `json`. La herramienta devuelve texto; no guarda archivos. El anfitrión puede guardar el resultado únicamente en la ruta solicitada por el usuario.
+**English:** A reusable instruction workflow for Spanish official-source research, using only the host's authorized native browsing and document capabilities. It includes dated historical examples and evidence rules; it provides no custom executable capability.
 
-## Dónde funciona
-
-| Entorno | Comportamiento |
-|---|---|
-| Claude Code o escritorio Codex/OpenAI compatible, MCP habilitado y Python 3.11+ | Proceso MCP local declarado, adaptadores e informes. |
-| Anfitrión sin MCP local | Solo navegación/archivos nativos autorizados; no se ejecutan scripts como alternativa ni se afirma haber ejecutado el adaptador. |
-| Sin red | Herramienta de ejemplo guardado; no se inventan datos actuales. |
-
-No hay servidor público, escucha de red ni instalación de dependencias. El único proceso de ejecución del plugin es el MCP declarado. Las instrucciones de desarrollo están separadas del flujo de uso.
-
-## Alcance real
-
-No ofrece previsiones ni asesoramiento de inversión. Una serie disponible puede estar discontinuada o usar una base antigua. No une series incompatibles ni infiere actualidad por disponibilidad.
-
-## Verificación
-
-[Desarrollo y pruebas](DEVELOPMENT.md). Las comprobaciones de instalación y protocolo no equivalen a aprobación del directorio ni a aceptación en todos los anfitriones.
-
-[Mejoras y crítica](CHANGELOG.md) · [Evidencia versionada](evidence/) · [Revisión de Claude](SUBMISSION.md). Los tests no equivalen a adopción. `ci/validate.yml` es una plantilla inactiva.
-
-**English:** An independent workflow for Spanish official data, with a self-contained Python adapter, offline example and readable reports. Answer language follows the user.
-
-**Sami Halawa** · Software independiente; sin afiliación oficial. [Privacidad](PRIVACY.md) · [Condiciones](TERMS.md) · [Soporte](SUPPORT.md) · [Seguridad](SECURITY.md).
-
-## Datos enviados a servicios externos
-
-Las consultas en vivo envían únicamente los parámetros públicos necesarios de la consulta a los servicios oficiales identificados en [Fuentes y endpoints](skills/ine-evidence/references/sources.md). El proveedor recibe esos parámetros y la dirección de red del entorno que ejecuta la consulta. No se envían credenciales, adjuntos, perfiles personales ni el historial de conversación. Estos accesos se realizan desde el MCP local declarado o las herramientas nativas autorizadas del anfitrión; no existe un conector público alojado. Los proxies con credenciales heredadas se rechazan antes de realizar una conexión.
-
-Las respuestas oficiales pueden contener nombres, direcciones u otros datos personales públicos. La caché local es solo de memoria, durante un máximo de cinco minutos mientras se ejecuta el proceso. Los resultados pueden permanecer en la conversación o en informes guardados explícitamente por el usuario; su conservación depende del anfitrión y del usuario. El editor no opera un servicio que reciba o almacene estos datos. Consulta [Privacidad](PRIVACY.md) para los detalles y los límites de reutilización.
-
-## Identidad visual
-
-Un símbolo sencillo identifica esta función y una pequeña bandera española marca el borde. No es un escudo ni un sello oficial, y no implica afiliación gubernamental. [Logo de ficha](assets/logo.png) · [Icono compacto](assets/icon.png).
-
-## Docker
-
-[Container build, stdio setup and offline examples](DOCKER.md). The container uses the same 0.4.0 adapters and does not create a hosted MCP endpoint.
+[Condiciones](TERMS.md) · [Soporte](SUPPORT.md) · [Seguridad](SECURITY.md).

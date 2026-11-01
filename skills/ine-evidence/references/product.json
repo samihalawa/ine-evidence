@@ -18,19 +18,13 @@
     "Presenta estos datos sin convertir nulos o valores confidenciales en cero."
   ],
   "benefits": [
-    "Descubre operaciones, tablas y series sin inventar códigos.",
-    "Conserva los resultados dentro de cada página.",
-    "Distingue periodo observado de fecha de consulta."
+    "Encuentra operaciones, tablas y series a partir de enlaces e identificadores oficiales.",
+    "Explica unidades, base, ajustes y límites de comparación.",
+    "Distingue el periodo observado de la publicación y la consulta."
   ],
-  "critique": "El JSON exigía interpretar códigos y el límite local ocultaba series. Un ejemplo histórico podía confundirse con un dato vigente.",
-  "change": "La nueva función ine_series_change lleva al usuario a una salida más directamente utilizable; Tablas legibles, offsets explícitos, periodos visibles y demostración etiquetada como histórica.",
-  "limits": "No ofrece previsiones ni asesoramiento de inversión. Una serie disponible puede estar discontinuada o usar una base antigua. No une series incompatibles ni infiere actualidad por disponibilidad.",
-  "tool": "ine_series_change",
-  "args": {
-    "series_code": "IPC251852",
-    "last": 5
-  },
-  "extra": "Descubre con ine_operations → ine_tables → ine_table_series. Usa next_offset antes de avanzar next_page. IPC251852 es un ejemplo histórico, no una selección del IPC vigente. Conserva unidades, base, ajuste y confidencialidad.",
+  "limits": "Una serie accesible puede estar discontinuada o usar una base antigua. No enlaza bases ni compara poblaciones o ajustes incompatibles sin un método oficial. No ofrece previsiones ni asesoramiento de inversión.",
   "slug": "ine-evidence",
-  "version": "0.4.0"
+  "version": "0.5.0",
+  "guidance": "Identifica la pregunta estadística y busca en las páginas oficiales del INE la operación, tabla y serie pertinentes. Verifica los metadatos antes de comparar valores.",
+  "mode": "instructions-only"
 }
