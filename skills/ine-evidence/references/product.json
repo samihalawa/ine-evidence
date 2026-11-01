@@ -2,7 +2,7 @@
   "name": "INE Evidence",
   "promise": "La cifra correcta, con su contexto.",
   "audience": "Analistas, periodistas, docentes y consultoras.",
-  "description": "Encuentra series del INE y presenta sus cifras con periodo, unidad, definición y límites de comparación.",
+  "description": "Consulta observaciones de una serie oficial del INE y compara dos valores con periodo, unidad y cambio aritmético claramente identificado.",
   "short": "Estadísticas con contexto",
   "source": "INE",
   "keywords": [
@@ -24,7 +24,7 @@
   ],
   "limits": "Una serie accesible puede estar discontinuada o usar una base antigua. No enlaza bases ni compara poblaciones o ajustes incompatibles sin un método oficial. No ofrece previsiones ni asesoramiento de inversión.",
   "slug": "ine-evidence",
-  "version": "0.5.0",
-  "guidance": "Identifica la pregunta estadística y busca en las páginas oficiales del INE la operación, tabla y serie pertinentes. Verifica los metadatos antes de comparar valores.",
-  "mode": "instructions-only"
+  "version": "0.6.0",
+  "guidance": "Consulta pública con conector MCP alojado e instrucciones complementarias; conserva fuentes, fechas y cobertura real.",
+  "mode": "hosted-read-only-mcp-with-guidance"
 }

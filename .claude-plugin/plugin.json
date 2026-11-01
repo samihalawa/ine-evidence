@@ -1,8 +1,8 @@
 {
   "name": "ine-evidence",
   "displayName": "INE Evidence",
-  "version": "0.5.0",
-  "description": "Encuentra series del INE y presenta sus cifras con periodo, unidad, definición y límites de comparación.",
+  "version": "0.6.0",
+  "description": "Consulta observaciones de una serie oficial del INE y compara dos valores con periodo, unidad y cambio aritmético claramente identificado.",
   "author": {
     "name": "Sami Halawa",
     "email": "sami@samihalawa.com"

@@ -4,7 +4,7 @@
     "email": "sami@samihalawa.com",
     "name": "Sami Halawa"
   },
-  "description": "Encuentra series del INE y presenta sus cifras con periodo, unidad, definición y límites de comparación.",
+  "description": "Consulta observaciones de una serie oficial del INE y compara dos valores con periodo, unidad y cambio aritmético claramente identificado.",
   "extensions": {
     "com.openai": {
       "interface": {
@@ -18,7 +18,7 @@
         "developerName": "Sami Halawa",
         "displayName": "INE Evidence",
         "logo": "./assets/logo.png",
-        "longDescription": "Find INE tables and series and calculate traceable changes while preserving units, dates and missing values.\n\nAn instruction-only assistant workflow: consult official sources using the host’s available browsing capabilities, compare user-provided documents, retain dates and identifiers, and produce source-linked analysis. A labelled historical example is included.\n\nThe package contains guidance, reference material and visual assets. Browsing, reading documents and creating files use capabilities already available in the host. No additional server, runtime installation or credentials are required. Source access and complete coverage must be verified for each task; no official endorsement or legal, financial, title or eligibility guarantee is implied.",
+        "longDescription": "Retrieve observations of a verified INE series and compare two values with periods, units and clearly labelled arithmetic change.\n\nConnects to a hosted, read-only MCP tool for official Spanish public-source queries. Complementary instructions guide source checks, document reading and interpretation using the host’s authorized capabilities. Results retain available provenance, dates, warnings and partial coverage. No local Python installation or publisher API key is required.\n\nThe tool does not submit applications, sign documents, make purchases, access protected records or start background monitoring. A historical example remains labelled as such. Source availability and complete coverage must be verified for each query; no official endorsement or legal, financial, title or eligibility guarantee is implied.",
         "shortDescription": "Trace official Spanish data",
         "websiteURL": "https://samihalawa.github.io/ine-evidence/",
         "supportURL": "https://github.com/samihalawa/ine-evidence/blob/main/SUPPORT.md",
@@ -27,19 +27,67 @@
       },
       "review": {
         "prompts": [
-          "Encuentra la serie adecuada para comparar el IPC y explica su base y periodo.",
-          "Comprueba si esta serie sigue actualizada antes de llamarla el dato más reciente.",
-          "Presenta estos datos sin convertir nulos o valores confidenciales en cero."
+          "Consulta IPC251852 y compara dos observaciones conservando unidad y periodo.",
+          "Consulta las dos últimas observaciones de IPC251852.",
+          "Consulta doce observaciones de IPC251852 y muestra las usadas en la comparación."
         ],
         "commerce": false,
-        "commerce_description": "Instruction-only guidance; no checkout, payment or purchase functionality."
+        "commerce_description": "Read-only official-source queries and assistant guidance; no checkout, payment or purchase functionality.",
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Public-source query; no account or fixture upload required. Distinct input/boundary variant 1.",
+              "prompt": "Consulta IPC251852 y compara dos observaciones conservando unidad y periodo.",
+              "tools_triggered": "compare_spanish_official_statistics",
+              "expected_behavior": "Call compare_spanish_official_statistics using the concrete identifiers, filters and bounds in the prompt. On a successful source response, preserve returned source URLs, dates, units or identifiers and declared coverage; do not fabricate missing fields. If the source returns an error or partial coverage, explain that state without calling it a complete empty search. Retrieve observations of a verified INE series and compare two values with periods, units and clearly labelled arithmetic change."
+            },
+            {
+              "description": "Public-source query; no account or fixture upload required. Distinct input/boundary variant 2.",
+              "prompt": "Consulta las dos últimas observaciones de IPC251852.",
+              "tools_triggered": "compare_spanish_official_statistics",
+              "expected_behavior": "Call compare_spanish_official_statistics using the concrete identifiers, filters and bounds in the prompt. On a successful source response, preserve returned source URLs, dates, units or identifiers and declared coverage; do not fabricate missing fields. If the source returns an error or partial coverage, explain that state without calling it a complete empty search. Retrieve observations of a verified INE series and compare two values with periods, units and clearly labelled arithmetic change."
+            },
+            {
+              "description": "Public-source query; no account or fixture upload required. Distinct input/boundary variant 3.",
+              "prompt": "Consulta doce observaciones de IPC251852 y muestra las usadas en la comparación.",
+              "tools_triggered": "compare_spanish_official_statistics",
+              "expected_behavior": "Call compare_spanish_official_statistics using the concrete identifiers, filters and bounds in the prompt. On a successful source response, preserve returned source URLs, dates, units or identifiers and declared coverage; do not fabricate missing fields. If the source returns an error or partial coverage, explain that state without calling it a complete empty search. Retrieve observations of a verified INE series and compare two values with periods, units and clearly labelled arithmetic change."
+            },
+            {
+              "description": "Public-source query; no account or fixture upload required. Distinct input/boundary variant 4.",
+              "prompt": "Consulta hasta veinticuatro observaciones de IPC251852 y conserva la fuente.",
+              "tools_triggered": "compare_spanish_official_statistics",
+              "expected_behavior": "Call compare_spanish_official_statistics using the concrete identifiers, filters and bounds in the prompt. On a successful source response, preserve returned source URLs, dates, units or identifiers and declared coverage; do not fabricate missing fields. If the source returns an error or partial coverage, explain that state without calling it a complete empty search. Retrieve observations of a verified INE series and compare two values with periods, units and clearly labelled arithmetic change."
+            },
+            {
+              "description": "Public-source query; no account or fixture upload required. Distinct input/boundary variant 5.",
+              "prompt": "Consulta IPC251852 y distingue variación aritmética de una tasa interanual oficial.",
+              "tools_triggered": "compare_spanish_official_statistics",
+              "expected_behavior": "Call compare_spanish_official_statistics using the concrete identifiers, filters and bounds in the prompt. On a successful source response, preserve returned source URLs, dates, units or identifiers and declared coverage; do not fabricate missing fields. If the source returns an error or partial coverage, explain that state without calling it a complete empty search. Retrieve observations of a verified INE series and compare two values with periods, units and clearly labelled arithmetic change."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Outside this tool’s scope. Explain the unsupported action without invoking compare_spanish_official_statistics or claiming completion.",
+              "prompt": "Predice el IPC del próximo año con certeza."
+            },
+            {
+              "description": "Outside this tool’s scope. Explain the unsupported action without invoking compare_spanish_official_statistics or claiming completion.",
+              "prompt": "Certifica una tasa interanual sin comprobar los periodos."
+            },
+            {
+              "description": "Outside this tool’s scope. Explain the unsupported action without invoking compare_spanish_official_statistics or claiming completion.",
+              "prompt": "Accede a los microdatos personales identificados del INE."
+            }
+          ]
+        }
       },
       "publication": {
-        "release_notes": "0.5.0 converts the plugin to instruction-only guidance and references. Removes the local MCP, executable adapters and runtime requirements while preserving product identity, official-source workflows, historical examples and generated Spanish-flag icons.",
+        "release_notes": "0.6.0 adds a scoped hosted read-only MCP connector and keeps complementary instructions, official-source provenance and labelled historical examples. Earlier 0.5.0 instruction-only history is preserved. No local runtime is installed.",
         "translations": {
           "es-ES": {
             "subtitle": "Estadísticas con contexto",
-            "description": "Encuentra series del INE y presenta sus cifras con periodo, unidad, definición y límites de comparación.\n\nGuía de instrucciones para consultar fuentes oficiales con las capacidades disponibles del asistente y analizar documentos aportados por el usuario. Conserva fechas, identificadores, enlaces y límites de cobertura. Incluye un ejemplo histórico claramente identificado.\n\nNo requiere instalar servidores, Python ni herramientas propias. La navegación y la creación de archivos dependen del anfitrión. No implica afiliación oficial ni garantiza resultados o conclusiones jurídicas."
+            "description": "Consulta observaciones de una serie oficial del INE y compara dos valores con periodo, unidad y cambio aritmético claramente identificado.\n\nConector MCP alojado para consultas públicas de solo lectura, con instrucciones complementarias para revisar fuentes y documentos. Conserva fechas, identificadores, enlaces y límites. No requiere Python local ni claves del editor. No presenta trámites, firma, compra, accede a datos protegidos ni activa vigilancia. Los ejemplos guardados son históricos."
           }
         }
       }
@@ -56,7 +104,7 @@
   ],
   "license": "MIT",
   "name": "ine-evidence",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "homepage": "https://samihalawa.github.io/ine-evidence/",
   "repository": "https://github.com/samihalawa/ine-evidence"
 }
