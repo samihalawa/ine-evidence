@@ -17,10 +17,10 @@
     "logo": "./assets/logo.png",
     "longDescription": "Retrieve observations of a verified INE series and compare two values with periods, units and clearly labelled arithmetic change.\n\nConnects to a hosted, read-only MCP tool for official Spanish public-source queries. Complementary instructions guide source checks, document reading and interpretation using the host’s authorized capabilities. Results retain available provenance, dates, warnings and partial coverage. No local Python installation or publisher API key is required.\n\nThe tool does not submit applications, sign documents, make purchases, access protected records or start background monitoring. A historical example remains labelled as such. Source availability and complete coverage must be verified for each query; no official endorsement or legal, financial, title or eligibility guarantee is implied.",
     "shortDescription": "Trace official Spanish data",
-    "websiteURL": "https://samihalawa.github.io/ine-evidence/",
-    "supportURL": "https://github.com/samihalawa/ine-evidence/blob/main/SUPPORT.md",
-    "privacyPolicyURL": "https://github.com/samihalawa/ine-evidence/blob/main/PRIVACY.md",
-    "termsOfServiceURL": "https://github.com/samihalawa/ine-evidence/blob/main/TERMS.md"
+    "websiteURL": "https://aiplugins.megawebs.com/plugins/ine-evidence",
+    "supportURL": "https://aiplugins.megawebs.com/plugins/ine-evidence/support",
+    "privacyPolicyURL": "https://aiplugins.megawebs.com/plugins/ine-evidence/privacy",
+    "termsOfServiceURL": "https://aiplugins.megawebs.com/plugins/ine-evidence/terms"
   },
   "keywords": [
     "spain",
@@ -34,8 +34,8 @@
   "license": "MIT",
   "name": "ine-evidence",
   "skills": "./skills",
-  "version": "0.6.0",
-  "homepage": "https://samihalawa.github.io/ine-evidence/",
+  "version": "0.6.2",
+  "homepage": "https://aiplugins.megawebs.com/plugins/ine-evidence",
   "extensions": {
     "com.openai": {
       "review": {

@@ -9,7 +9,7 @@ La cifra correcta, con su contexto. Encuentra series del INE y presenta sus cifr
 
 ## Cómo trabajar
 
-Esta edición 0.6.0 incluye el conector MCP alojado `compare_spanish_official_statistics` en `https://aiplugins.megawebs.com/mcp/ine-evidence`. Úsalo para su consulta pública de solo lectura: Consulta observaciones de una serie oficial del INE y compara dos valores con periodo, unidad y cambio aritmético claramente identificado. Aplica después las instrucciones para interpretar resultados y revisar documentos con las capacidades autorizadas del anfitrión. No requiere procesos locales, Python ni claves del editor. Envía solo argumentos públicos mínimos, nunca conversaciones completas, documentos privados ni credenciales.
+Esta edición 0.6.2 incluye el conector MCP alojado `compare_spanish_official_statistics` en `https://aiplugins.megawebs.com/mcp/ine-evidence`. Úsalo para su consulta pública de solo lectura: Consulta observaciones de una serie oficial del INE y compara dos valores con periodo, unidad y cambio aritmético claramente identificado. Aplica después las instrucciones para interpretar resultados y revisar documentos con las capacidades autorizadas del anfitrión. No requiere procesos locales, Python ni claves del editor. Envía solo argumentos públicos mínimos, nunca conversaciones completas, documentos privados ni credenciales.
 
 Identifica la pregunta estadística y busca en las páginas oficiales del INE la operación, tabla y serie pertinentes. Verifica los metadatos antes de comparar valores.
 
