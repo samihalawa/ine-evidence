@@ -9,14 +9,15 @@
     "category": "Productivity",
     "composerIcon": "./assets/icon.png",
     "defaultPrompt": [
-      "Find the current INE series for my question, with its units and latest observation date.",
-      "Compare these official Spanish statistics without mixing bases or periods."
+      "Consulta las dos últimas observaciones disponibles de la serie INE IPC251852 e indica su periodo y unidad.",
+      "Consulta ocho observaciones de la serie IPC251852 e identifica cuáles se usan en la comparación.",
+      "Consulta seis observaciones de IPC251852. Distingue el cambio absoluto y porcentual de la tasa interanual oficial."
     ],
     "developerName": "Sami Halawa",
     "displayName": "INE Evidence",
     "logo": "./assets/logo.png",
-    "longDescription": "Retrieve observations of a verified INE series and compare two values with periods, units and clearly labelled arithmetic change.\n\nConnects to a hosted, read-only MCP tool for official Spanish public-source queries. Complementary instructions guide source checks, document reading and interpretation using the host’s authorized capabilities. Results retain available provenance, dates, warnings and partial coverage. No local Python installation or publisher API key is required.\n\nThe tool does not submit applications, sign documents, make purchases, access protected records or start background monitoring. A historical example remains labelled as such. Source availability and complete coverage must be verified for each query; no official endorsement or legal, financial, title or eligibility guarantee is implied.",
-    "shortDescription": "Trace official Spanish data",
+    "longDescription": "Retrieve observations for a known INE series code and compare the two latest comparable public numeric periods returned. Keep the series name, units and dates with the values, and show the arithmetic change with its official source.",
+    "shortDescription": "Compare official INE figures",
     "websiteURL": "https://aiplugins.megawebs.com/plugins/ine-evidence",
     "supportURL": "https://aiplugins.megawebs.com/plugins/ine-evidence/support",
     "privacyPolicyURL": "https://aiplugins.megawebs.com/plugins/ine-evidence/privacy",
@@ -34,7 +35,7 @@
   "license": "MIT",
   "name": "ine-evidence",
   "skills": "./skills",
-  "version": "0.6.2",
+  "version": "0.6.3",
   "homepage": "https://aiplugins.megawebs.com/plugins/ine-evidence",
   "extensions": {
     "com.openai": {

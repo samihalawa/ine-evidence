@@ -13,7 +13,7 @@
       "name": "ine-evidence",
       "source": "./",
       "description": "Consulta observaciones de una serie oficial del INE y compara dos valores con periodo, unidad y cambio aritmético claramente identificado.",
-      "version": "0.6.2"
+      "version": "0.6.3"
     }
   ]
 }

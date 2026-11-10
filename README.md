@@ -1,19 +1,22 @@
-![Icono de INE Evidence](assets/icon.png)
-
 # INE Evidence
 
 Consulta observaciones de una serie oficial del INE y compara dos valores con periodo, unidad y cambio aritmético claramente identificado.
 
-**Versión 0.6.2 · Conector MCP alojado e instrucciones complementarias · Sami Halawa · MIT**
+**Versión 0.6.3 · Conector MCP alojado e instrucciones complementarias · Sami Halawa · MIT**
 
 ## Instalación y uso
 
+```bash
+/plugin install ine-evidence --marketplace samihalawa/2026-MASTER-Marketplace-Plugins-Connectors-etc
+```
+
+
 Instala el paquete en un anfitrión compatible con plugins y MCP remoto. La configuración incluida conecta `https://aiplugins.megawebs.com/mcp/ine-evidence` mediante Streamable HTTP y expone `compare_spanish_official_statistics`. No necesitas Python local, instalar dependencias ni proporcionar una clave del editor. La disponibilidad de la conexión depende del anfitrión y de la fuente pública.
 
-> Consulta IPC251852 y compara dos observaciones conservando unidad y periodo.
+> Consulta las dos últimas observaciones disponibles de la serie INE IPC251852 e indica su periodo y unidad.
 
-- Consulta las dos últimas observaciones de IPC251852.
-- Consulta doce observaciones de IPC251852 y muestra las usadas en la comparación.
+- Consulta ocho observaciones de la serie IPC251852 e identifica cuáles se usan en la comparación.
+- Consulta seis observaciones de IPC251852. Distingue el cambio absoluto y porcentual de la tasa interanual oficial.
 
 Lee [la habilidad](skills/ine-evidence/SKILL.md) para el procedimiento, [las fuentes](skills/ine-evidence/references/sources.md) y [el contrato de acceso](skills/ine-evidence/references/runtime.md). La herramienta realiza la consulta acotada descrita; la lectura de documentos, interpretación y creación de archivos usan capacidades adicionales del anfitrión. Conserva los identificadores, enlaces, fechas y límites realmente devueltos.
 

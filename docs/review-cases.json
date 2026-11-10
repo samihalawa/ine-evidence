@@ -1,57 +1,57 @@
 {
-  "version": "0.6.2",
+  "version": "0.6.3",
   "endpoint": "https://aiplugins.megawebs.com/mcp/ine-evidence",
   "scope": "Specification of positive inputs and expected behavior, and unsupported negative requests. This JSON defines cases and is not an execution log. Direct MCP calls and the SDK demo verify tool behavior; the demo does not test assistant routing. Actual native assistant test evidence is retained in the native release records.",
   "positive": [
     {
       "id": "positive-1",
-      "prompt": "Consulta IPC251852 y compara dos observaciones conservando unidad y periodo.",
-      "tool": "compare_spanish_official_statistics",
-      "arguments": {
-        "series_code": "IPC251852",
-        "last": 12
-      },
-      "expected_behavior": "Call compare_spanish_official_statistics using the concrete identifiers, filters and bounds in the prompt. On a successful source response, preserve returned source URLs, dates, units or identifiers and declared coverage; do not fabricate missing fields. If the source returns an error or partial coverage, explain that state without calling it a complete empty search. Retrieve observations of a verified INE series and compare two values with periods, units and clearly labelled arithmetic change."
-    },
-    {
-      "id": "positive-2",
-      "prompt": "Consulta las dos últimas observaciones de IPC251852.",
+      "prompt": "Consulta las dos últimas observaciones disponibles de la serie INE IPC251852 e indica su periodo y unidad.",
       "tool": "compare_spanish_official_statistics",
       "arguments": {
         "series_code": "IPC251852",
         "last": 2
       },
-      "expected_behavior": "Call compare_spanish_official_statistics using the concrete identifiers, filters and bounds in the prompt. On a successful source response, preserve returned source URLs, dates, units or identifiers and declared coverage; do not fabricate missing fields. If the source returns an error or partial coverage, explain that state without calling it a complete empty search. Retrieve observations of a verified INE series and compare two values with periods, units and clearly labelled arithmetic change."
+      "expected_behavior": "Report the two public numeric observations and their periods, units when returned, series name and official source. Describe the latest date available in the series. If the source fails or coverage is partial, explain what could be checked."
+    },
+    {
+      "id": "positive-2",
+      "prompt": "Consulta ocho observaciones de la serie IPC251852 e identifica cuáles se usan en la comparación.",
+      "tool": "compare_spanish_official_statistics",
+      "arguments": {
+        "series_code": "IPC251852",
+        "last": 8
+      },
+      "expected_behavior": "State how many observations were requested and identify the two comparable numeric periods actually used. Keep the calculation tied to those periods. If the source fails or coverage is partial, explain what could be checked."
     },
     {
       "id": "positive-3",
-      "prompt": "Consulta doce observaciones de IPC251852 y muestra las usadas en la comparación.",
+      "prompt": "Consulta seis observaciones de IPC251852. Distingue el cambio absoluto y porcentual de la tasa interanual oficial.",
       "tool": "compare_spanish_official_statistics",
       "arguments": {
         "series_code": "IPC251852",
-        "last": 12
+        "last": 6
       },
-      "expected_behavior": "Call compare_spanish_official_statistics using the concrete identifiers, filters and bounds in the prompt. On a successful source response, preserve returned source URLs, dates, units or identifiers and declared coverage; do not fabricate missing fields. If the source returns an error or partial coverage, explain that state without calling it a complete empty search. Retrieve observations of a verified INE series and compare two values with periods, units and clearly labelled arithmetic change."
+      "expected_behavior": "Label the signed absolute difference and the percentage change between the two observed values. Avoid calling this calculation an official annual rate. If the source fails or coverage is partial, explain what could be checked."
     },
     {
       "id": "positive-4",
-      "prompt": "Consulta hasta veinticuatro observaciones de IPC251852 y conserva la fuente.",
+      "prompt": "Consulta tres observaciones de IPC53306 y cita el título y el código de serie que devuelve el INE.",
       "tool": "compare_spanish_official_statistics",
       "arguments": {
-        "series_code": "IPC251852",
-        "last": 24
+        "series_code": "IPC53306",
+        "last": 3
       },
-      "expected_behavior": "Call compare_spanish_official_statistics using the concrete identifiers, filters and bounds in the prompt. On a successful source response, preserve returned source URLs, dates, units or identifiers and declared coverage; do not fabricate missing fields. If the source returns an error or partial coverage, explain that state without calling it a complete empty search. Retrieve observations of a verified INE series and compare two values with periods, units and clearly labelled arithmetic change."
+      "expected_behavior": "Return the source title and exact series code, date and unit when available, and the two compared observations from this series. If the source fails or coverage is partial, explain what could be checked."
     },
     {
       "id": "positive-5",
-      "prompt": "Consulta IPC251852 y distingue variación aritmética de una tasa interanual oficial.",
+      "prompt": "Consulta hasta veinticuatro observaciones de IPC53308. Indica hasta qué fecha llega la serie devuelta y cómo se identifica en el INE.",
       "tool": "compare_spanish_official_statistics",
       "arguments": {
-        "series_code": "IPC251852",
-        "last": 12
+        "series_code": "IPC53308",
+        "last": 24
       },
-      "expected_behavior": "Call compare_spanish_official_statistics using the concrete identifiers, filters and bounds in the prompt. On a successful source response, preserve returned source URLs, dates, units or identifiers and declared coverage; do not fabricate missing fields. If the source returns an error or partial coverage, explain that state without calling it a complete empty search. Retrieve observations of a verified INE series and compare two values with periods, units and clearly labelled arithmetic change."
+      "expected_behavior": "Report the source’s title, returned coverage and latest observed date. Distinguish the series’ reported values from the separate change calculated between two observations. If the source fails or coverage is partial, explain what could be checked."
     }
   ],
   "negative": [
@@ -59,19 +59,19 @@
       "id": "negative-1",
       "prompt": "Predice el IPC del próximo año con certeza.",
       "prohibited_tool": "compare_spanish_official_statistics",
-      "expected_behavior": "Outside this tool’s scope. Explain the unsupported action without invoking compare_spanish_official_statistics or claiming completion."
+      "expected_behavior": "Published observations describe past periods. Explain that the lookup cannot predict next year’s IPC with certainty. Do not call compare_spanish_official_statistics for this request."
     },
     {
       "id": "negative-2",
       "prompt": "Certifica una tasa interanual sin comprobar los periodos.",
       "prohibited_tool": "compare_spanish_official_statistics",
-      "expected_behavior": "Outside this tool’s scope. Explain the unsupported action without invoking compare_spanish_official_statistics or claiming completion."
+      "expected_behavior": "A year-over-year measure requires compatible periods and a verified definition. Explain that an arithmetic two-period comparison cannot certify an annual rate. Do not call compare_spanish_official_statistics for this request."
     },
     {
       "id": "negative-3",
       "prompt": "Accede a los microdatos personales identificados del INE.",
       "prohibited_tool": "compare_spanish_official_statistics",
-      "expected_behavior": "Outside this tool’s scope. Explain the unsupported action without invoking compare_spanish_official_statistics or claiming completion."
+      "expected_behavior": "The tool uses public statistical series. Explain that it cannot access identified personal microdata. Do not call compare_spanish_official_statistics for this request."
     }
   ]
 }

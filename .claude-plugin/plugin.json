@@ -1,7 +1,7 @@
 {
   "name": "ine-evidence",
   "displayName": "INE Evidence",
-  "version": "0.6.2",
+  "version": "0.6.3",
   "description": "Consulta observaciones de una serie oficial del INE y compara dos valores con periodo, unidad y cambio aritmético claramente identificado.",
   "author": {
     "name": "Sami Halawa",
