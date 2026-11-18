@@ -1,4 +1,4 @@
-# Desarrollo — INE Evidence 0.6.2
+# Desarrollo — Spain Statistics & INE 0.6.4
 
 El paquete configura un MCP remoto Streamable HTTP; no contiene un servidor Python local. Contrato: `compare_spanish_official_statistics` en `https://aiplugins.megawebs.com/mcp/ine-evidence`. El servidor compartido se mantiene en `connectors/spain-assistant-mcp-apps` del repositorio privado maestro.
 

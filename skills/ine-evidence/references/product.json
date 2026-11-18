@@ -1,21 +1,25 @@
 {
-  "name": "INE Evidence",
+  "name": "Spain Statistics & INE",
   "promise": "La cifra correcta, con su contexto.",
   "audience": "Analistas, periodistas, docentes y consultoras.",
-  "description": "Consulta observaciones de una serie oficial del INE y compara dos valores con periodo, unidad y cambio aritmético claramente identificado.",
-  "short": "Estadísticas con contexto",
+  "description": "Retrieve and compare official Spanish statistics (estadísticas del INE) using a verified series code. Show two comparable observations, dates, units and arithmetic changes.",
+  "short": "Estadísticas oficiales de INE",
   "source": "INE",
   "keywords": [
-    "ine",
-    "estadisticas",
-    "ipc",
-    "datos-economicos",
-    "series-temporales"
+    "spain",
+    "statistics",
+    "economic data",
+    "inflation",
+    "estadísticas",
+    "INE",
+    "IPC",
+    "series",
+    "indicadores"
   ],
   "prompts": [
-    "Encuentra la serie adecuada para comparar el IPC y explica su base y periodo.",
-    "Comprueba si esta serie sigue actualizada antes de llamarla el dato más reciente.",
-    "Presenta estos datos sin convertir nulos o valores confidenciales en cero."
+    "Compare the available observations in INE series IPC251852 and show units and dates.",
+    "Consulta la serie IPC251852 del INE y calcula el cambio entre dos observaciones comparables.",
+    "Comprueba los periodos y la unidad de IPC251852 antes de interpretar su variación."
   ],
   "benefits": [
     "Encuentra operaciones, tablas y series a partir de enlaces e identificadores oficiales.",
@@ -24,7 +28,7 @@
   ],
   "limits": "Una serie accesible puede estar discontinuada o usar una base antigua. No enlaza bases ni compara poblaciones o ajustes incompatibles sin un método oficial. No ofrece previsiones ni asesoramiento de inversión.",
   "slug": "ine-evidence",
-  "version": "0.6.2",
+  "version": "0.6.4",
   "guidance": "Consulta pública con conector MCP alojado e instrucciones complementarias; conserva fuentes, fechas y cobertura real.",
   "mode": "hosted-read-only-mcp-with-guidance"
 }

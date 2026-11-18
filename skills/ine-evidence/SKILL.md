@@ -1,15 +1,15 @@
 ---
 name: ine-evidence
-description: "Use when the user needs Spanish INE statistics with observation periods, units, base years and comparable series. Use the hosted read-only MCP query and the evidence workflow with authorized host browsing and document reading."
+description: "Use when the user wants to retrieve and compare official Spanish statistics (estadísticas del INE) using a verified series code. Show two comparable observations, dates, units and arithmetic changes."
 ---
 
-# INE Evidence
+# Spain Statistics & INE
 
 La cifra correcta, con su contexto. Encuentra series del INE y presenta sus cifras con periodo, unidad, definición y límites de comparación.
 
 ## Cómo trabajar
 
-Esta edición 0.6.2 incluye el conector MCP alojado `compare_spanish_official_statistics` en `https://aiplugins.megawebs.com/mcp/ine-evidence`. Úsalo para su consulta pública de solo lectura: Consulta observaciones de una serie oficial del INE y compara dos valores con periodo, unidad y cambio aritmético claramente identificado. Aplica después las instrucciones para interpretar resultados y revisar documentos con las capacidades autorizadas del anfitrión. No requiere procesos locales, Python ni claves del editor. Envía solo argumentos públicos mínimos, nunca conversaciones completas, documentos privados ni credenciales.
+Esta edición 0.6.4 incluye el conector MCP alojado `compare_spanish_official_statistics` en `https://aiplugins.megawebs.com/mcp/ine-evidence`. Úsalo para su consulta pública de solo lectura: Consulta observaciones de una serie oficial del INE y compara dos valores con periodo, unidad y cambio aritmético claramente identificado. Aplica después las instrucciones para interpretar resultados y revisar documentos con las capacidades autorizadas del anfitrión. No requiere procesos locales, Python ni claves del editor. Envía solo argumentos públicos mínimos, nunca conversaciones completas, documentos privados ni credenciales.
 
 Identifica la pregunta estadística y busca en las páginas oficiales del INE la operación, tabla y serie pertinentes. Verifica los metadatos antes de comparar valores.
 

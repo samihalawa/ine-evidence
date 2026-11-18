@@ -1,8 +1,8 @@
-# INE Evidence
+# Spain Statistics & INE
 
-Consulta observaciones de una serie oficial del INE y compara dos valores con periodo, unidad y cambio aritmético claramente identificado.
+Retrieve and compare official Spanish statistics (estadísticas del INE) using a verified series code. Show two comparable observations, dates, units and arithmetic changes.
 
-**Versión 0.6.3 · Conector MCP alojado e instrucciones complementarias · Sami Halawa · MIT**
+**Versión 0.6.4 · Conector MCP alojado e instrucciones complementarias · Sami Halawa · MIT**
 
 ## Instalación y uso
 

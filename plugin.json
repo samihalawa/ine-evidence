@@ -4,23 +4,23 @@
     "email": "sami@samihalawa.com",
     "name": "Sami Halawa"
   },
-  "description": "Consulta observaciones de una serie oficial del INE y compara dos valores con periodo, unidad y cambio aritm\u00e9tico claramente identificado.",
+  "description": "Retrieve and compare official Spanish statistics (estadísticas del INE) using a verified series code. Show two comparable observations, dates, units and arithmetic changes.",
   "extensions": {
     "com.openai": {
       "interface": {
         "capabilities": [],
-        "category": "Productivity",
+        "category": "Data & Analytics",
         "composerIcon": "./assets/icon.png",
         "defaultPrompt": [
-          "Consulta las dos \u00faltimas observaciones disponibles de la serie INE IPC251852 e indica su periodo y unidad.",
-          "Consulta ocho observaciones de la serie IPC251852 e identifica cu\u00e1les se usan en la comparaci\u00f3n.",
-          "Consulta seis observaciones de IPC251852. Distingue el cambio absoluto y porcentual de la tasa interanual oficial."
+          "Compare the available observations in INE series IPC251852 and show units and dates.",
+          "Consulta la serie IPC251852 del INE y calcula el cambio entre dos observaciones comparables.",
+          "Comprueba los periodos y la unidad de IPC251852 antes de interpretar su variación."
         ],
         "developerName": "Sami Halawa",
-        "displayName": "INE Evidence",
+        "displayName": "Spain Statistics & INE",
         "logo": "./assets/logo.png",
-        "longDescription": "Retrieve observations for a known INE series code and compare the two latest comparable public numeric periods returned. Keep the series name, units and dates with the values, and show the arithmetic change with its official source.",
-        "shortDescription": "Compare official INE figures",
+        "longDescription": "Compare official Spanish statistics from an INE series. Supply a verified series code to retrieve observations and compare two available comparable numeric periods. Keep the series name, observed periods and units alongside the values, absolute change and percentage change when defined. Use official source links to check the underlying series. The connector needs a series code; it does not discover a series from a topic alone, forecast future values or establish that an accessible series is still current. A change between observations is not automatically an annual growth rate.",
+        "shortDescription": "Compare official Spanish data",
         "websiteURL": "https://aiplugins.megawebs.com/plugins/ine-evidence",
         "supportURL": "https://aiplugins.megawebs.com/plugins/ine-evidence/support",
         "privacyPolicyURL": "https://aiplugins.megawebs.com/plugins/ine-evidence/privacy",
@@ -28,8 +28,8 @@
       },
       "review": {
         "prompts": [
-          "Consulta las dos \u00faltimas observaciones disponibles de la serie INE IPC251852 e indica su periodo y unidad.",
-          "Consulta ocho observaciones de la serie IPC251852 e identifica cu\u00e1les se usan en la comparaci\u00f3n.",
+          "Consulta las dos últimas observaciones disponibles de la serie INE IPC251852 e indica su periodo y unidad.",
+          "Consulta ocho observaciones de la serie IPC251852 e identifica cuáles se usan en la comparación.",
           "Consulta seis observaciones de IPC251852. Distingue el cambio absoluto y porcentual de la tasa interanual oficial."
         ],
         "commerce": false,
@@ -38,13 +38,13 @@
           "positive": [
             {
               "description": "Read a named INE series",
-              "prompt": "Consulta las dos \u00faltimas observaciones disponibles de la serie INE IPC251852 e indica su periodo y unidad.",
+              "prompt": "Consulta las dos últimas observaciones disponibles de la serie INE IPC251852 e indica su periodo y unidad.",
               "tools_triggered": "compare_spanish_official_statistics",
               "expected_behavior": "Report the two public numeric observations and their periods, units when returned, series name and official source. Describe the latest date available in the series. If the source fails or coverage is partial, explain what could be checked."
             },
             {
               "description": "Check a wider observation window",
-              "prompt": "Consulta ocho observaciones de la serie IPC251852 e identifica cu\u00e1les se usan en la comparaci\u00f3n.",
+              "prompt": "Consulta ocho observaciones de la serie IPC251852 e identifica cuáles se usan en la comparación.",
               "tools_triggered": "compare_spanish_official_statistics",
               "expected_behavior": "State how many observations were requested and identify the two comparable numeric periods actually used. Keep the calculation tied to those periods. If the source fails or coverage is partial, explain what could be checked."
             },
@@ -56,21 +56,21 @@
             },
             {
               "description": "Compare a different named series",
-              "prompt": "Consulta tres observaciones de IPC53306 y cita el t\u00edtulo y el c\u00f3digo de serie que devuelve el INE.",
+              "prompt": "Consulta tres observaciones de IPC53306 y cita el título y el código de serie que devuelve el INE.",
               "tools_triggered": "compare_spanish_official_statistics",
               "expected_behavior": "Return the source title and exact series code, date and unit when available, and the two compared observations from this series. If the source fails or coverage is partial, explain what could be checked."
             },
             {
               "description": "Disclose the time coverage of an older series",
-              "prompt": "Consulta hasta veinticuatro observaciones de IPC53308. Indica hasta qu\u00e9 fecha llega la serie devuelta y c\u00f3mo se identifica en el INE.",
+              "prompt": "Consulta hasta veinticuatro observaciones de IPC53308. Indica hasta qué fecha llega la serie devuelta y cómo se identifica en el INE.",
               "tools_triggered": "compare_spanish_official_statistics",
-              "expected_behavior": "Report the source\u2019s title, returned coverage and latest observed date. Distinguish the series\u2019 reported values from the separate change calculated between two observations. If the source fails or coverage is partial, explain what could be checked."
+              "expected_behavior": "Report the source’s title, returned coverage and latest observed date. Distinguish the series’ reported values from the separate change calculated between two observations. If the source fails or coverage is partial, explain what could be checked."
             }
           ],
           "negative": [
             {
-              "description": "Published observations describe past periods. Explain that the lookup cannot predict next year\u2019s IPC with certainty. Do not call compare_spanish_official_statistics for this request.",
-              "prompt": "Predice el IPC del pr\u00f3ximo a\u00f1o con certeza."
+              "description": "Published observations describe past periods. Explain that the lookup cannot predict next year’s IPC with certainty. Do not call compare_spanish_official_statistics for this request.",
+              "prompt": "Predice el IPC del próximo año con certeza."
             },
             {
               "description": "A year-over-year measure requires compatible periods and a verified definition. Explain that an arithmetic two-period comparison cannot certify an annual rate. Do not call compare_spanish_official_statistics for this request.",
@@ -85,11 +85,11 @@
         "demo_recording_url": "https://github.com/samihalawa/spain-assistant-mcp-apps/releases/download/v0.6.1/spain-hosted-demo.mp4"
       },
       "publication": {
-        "release_notes": "Adds review cases for known INE series, observation windows and interpretation of arithmetic change.",
+        "release_notes": "Clearer task-based name, descriptions and examples for finding the right Spanish public records. Existing tools and source coverage are unchanged.",
         "translations": {
           "es-ES": {
-            "subtitle": "Estad\u00edsticas con contexto",
-            "description": "Consulta observaciones de un c\u00f3digo de serie conocido del INE y compara los dos periodos num\u00e9ricos p\u00fablicos comparables m\u00e1s recientes que devuelve la fuente. Conserva t\u00edtulo, unidad, fechas, valores y enlace oficial al presentar el cambio aritm\u00e9tico."
+            "subtitle": "Estadísticas oficiales de INE",
+            "description": "Compara estadísticas oficiales españolas de una serie del INE. Indica un código de serie verificado para consultar observaciones y comparar dos periodos numéricos comparables disponibles. Conserva nombre, periodos y unidades junto a los valores, cambio absoluto y cambio porcentual cuando se pueda calcular. Los enlaces oficiales permiten revisar la serie. El conector necesita su código: no descubre series solo por tema, predice valores ni acredita que una serie accesible siga vigente. El cambio entre observaciones no equivale automáticamente a una tasa anual."
           }
         }
       }
@@ -97,16 +97,18 @@
   },
   "keywords": [
     "spain",
-    "claude-plugin",
-    "ine",
-    "estadisticas",
-    "ipc",
-    "datos-economicos",
-    "series-temporales"
+    "statistics",
+    "economic data",
+    "inflation",
+    "estadísticas",
+    "INE",
+    "IPC",
+    "series",
+    "indicadores"
   ],
   "license": "MIT",
   "name": "ine-evidence",
-  "version": "0.6.3",
+  "version": "0.6.4",
   "homepage": "https://aiplugins.megawebs.com/plugins/ine-evidence",
   "repository": "https://github.com/samihalawa/ine-evidence"
 }

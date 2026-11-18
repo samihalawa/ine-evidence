@@ -1,4 +1,4 @@
-# Revisión — INE Evidence 0.6.3
+# Revisión — Spain Statistics & INE 0.6.4
 
 Paquete remoto con una herramienta: `compare_spanish_official_statistics` en `https://aiplugins.megawebs.com/mcp/ine-evidence`. Casos: cinco positivos y tres negativos en `plugin.json`. Las variantes cubren entradas o límites distintos; las fuentes dinámicas pueden devolver errores o cobertura parcial, que deben declararse sin fabricar resultados.
 

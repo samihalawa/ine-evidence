@@ -1,4 +1,4 @@
-# Ejemplo histórico y escenarios de revisión
+# Ejemplos históricos y escenarios — Spain Statistics & INE
 
 El archivo references/demo.json conserva una captura de 20 de octubre de 2026 de una comparación de la serie IPC251852. Lee captured_at y result como documento histórico. El código y los periodos guardados no seleccionan la serie del IPC vigente; conserva sus unidades, fechas y advertencias.
 

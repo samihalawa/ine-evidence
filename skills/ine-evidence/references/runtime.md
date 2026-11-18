@@ -1,4 +1,4 @@
-# Acceso al conector — INE Evidence 0.6.2
+# Acceso al conector — Spain Statistics & INE 0.6.4
 
 Endpoint MCP Streamable HTTP: `https://aiplugins.megawebs.com/mcp/ine-evidence`. Herramienta: `compare_spanish_official_statistics`. Consulta observaciones de una serie oficial del INE y compara dos valores con periodo, unidad y cambio aritmético claramente identificado.
 
