@@ -39,7 +39,7 @@
   "license": "MIT",
   "name": "ine-evidence",
   "skills": "./skills",
-  "version": "0.6.5",
+  "version": "0.6.6",
   "homepage": "https://aiplugins.megawebs.com/plugins/ine-evidence",
   "extensions": {
     "com.openai": {

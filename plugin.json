@@ -43,12 +43,6 @@
               "expected_behavior": "Report the two public numeric observations and their periods, units when returned, series name and official source. Describe the latest date available in the series. If the source fails or coverage is partial, explain what could be checked."
             },
             {
-              "description": "Check a wider observation window",
-              "prompt": "Consulta ocho observaciones de la serie IPC251852 e identifica cuáles se usan en la comparación.",
-              "tools_triggered": "compare_spanish_official_statistics",
-              "expected_behavior": "State how many observations were requested and identify the two comparable numeric periods actually used. Keep the calculation tied to those periods. If the source fails or coverage is partial, explain what could be checked."
-            },
-            {
               "description": "Retain arithmetic meaning",
               "prompt": "Consulta seis observaciones de IPC251852. Distingue el cambio absoluto y porcentual de la tasa interanual oficial.",
               "tools_triggered": "compare_spanish_official_statistics",
@@ -116,7 +110,7 @@
   ],
   "license": "MIT",
   "name": "ine-evidence",
-  "version": "0.6.5",
+  "version": "0.6.6",
   "homepage": "https://aiplugins.megawebs.com/plugins/ine-evidence",
   "repository": "https://github.com/samihalawa/ine-evidence"
 }

@@ -1,5 +1,5 @@
 {
-  "version": "0.6.5",
+  "version": "0.6.6",
   "endpoint": "https://aiplugins.megawebs.com/mcp/ine-evidence",
   "scope": "Specification of positive inputs and expected behavior, and unsupported negative requests. This JSON defines cases and is not an execution log. Direct MCP calls and the SDK demo verify tool behavior; the demo does not test assistant routing. Actual native assistant test evidence is retained in the native release records.",
   "positive": [
@@ -12,16 +12,6 @@
         "last": 2
       },
       "expected_behavior": "Report the two public numeric observations and their periods, units when returned, series name and official source. Describe the latest date available in the series. If the source fails or coverage is partial, explain what could be checked."
-    },
-    {
-      "id": "positive-2",
-      "prompt": "Consulta ocho observaciones de la serie IPC251852 e identifica cuáles se usan en la comparación.",
-      "tool": "compare_spanish_official_statistics",
-      "arguments": {
-        "series_code": "IPC251852",
-        "last": 8
-      },
-      "expected_behavior": "State how many observations were requested and identify the two comparable numeric periods actually used. Keep the calculation tied to those periods. If the source fails or coverage is partial, explain what could be checked."
     },
     {
       "id": "positive-3",

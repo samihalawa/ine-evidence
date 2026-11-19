@@ -1,7 +1,7 @@
 {
   "name": "ine-evidence",
   "displayName": "Spain Statistics & INE",
-  "version": "0.6.5",
+  "version": "0.6.6",
   "description": "Compare official statistics from Spain (estadísticas de España) using a verified INE series code. Show observed periods, units, values and arithmetic changes with source links.",
   "author": {
     "name": "Sami Halawa",
