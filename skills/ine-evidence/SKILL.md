@@ -1,15 +1,20 @@
 ---
 name: ine-evidence
-description: "Use when the user wants to retrieve and compare official Spanish statistics (estadísticas del INE) using a verified series code. Show two comparable observations, dates, units and arithmetic changes."
+description: "Use when the user wants to compare official statistics from Spain (estadísticas de España) using a verified INE series code. Show observed periods, units, values and arithmetic changes with source links."
 ---
 
 # Spain Statistics & INE
 
-La cifra correcta, con su contexto. Encuentra series del INE y presenta sus cifras con periodo, unidad, definición y límites de comparación.
+Compara cifras de España con sus fechas y unidades. Compare official statistics from Spain (estadísticas de España) using a verified INE series code. Show observed periods, units, values and arithmetic changes with source links.
+## Primera consulta y resultado útil
+
+Con un código de serie verificado, consulta la herramienta directamente. Si solo hay un tema, usa páginas oficiales o documentos disponibles para identificar la serie; la herramienta no descubre códigos. No sustituyas el indicador solicitado por IPC251852: es un ejemplo histórico cuya fecha y base deben mostrarse. Usa la herramienta MCP para su consulta soportada; si su respuesta ya resuelve la petición, no repitas esa búsqueda en el navegador. Abre documentos adicionales solo cuando la pregunta o una laguna material lo requieran. Reutiliza el contexto; pregunta solo por un dato esencial que no puedas resolver con la información o fuentes disponibles.
+
+Entrega primero la respuesta o comparación que pidió el usuario, con una tabla breve cuando ayude. Conserva enlaces oficiales, fechas, identificadores y unidades relevantes; explica los límites que cambien la interpretación junto al dato afectado. El resultado debe poder reutilizarse desde la conversación, sin publicidad, llamadas a contratar ni recomendaciones ajenas a la tarea. Propón una continuación solo cuando ayude a resolver la petición; no actives alertas, seguimiento ni funciones que no se hayan ejecutado.
 
 ## Cómo trabajar
 
-Esta edición 0.6.4 incluye el conector MCP alojado `compare_spanish_official_statistics` en `https://aiplugins.megawebs.com/mcp/ine-evidence`. Úsalo para su consulta pública de solo lectura: Consulta observaciones de una serie oficial del INE y compara dos valores con periodo, unidad y cambio aritmético claramente identificado. Aplica después las instrucciones para interpretar resultados y revisar documentos con las capacidades autorizadas del anfitrión. No requiere procesos locales, Python ni claves del editor. Envía solo argumentos públicos mínimos, nunca conversaciones completas, documentos privados ni credenciales.
+Esta edición 0.6.5 incluye el conector MCP alojado `compare_spanish_official_statistics` en `https://aiplugins.megawebs.com/mcp/ine-evidence`. Úsalo para su consulta pública de solo lectura: Consulta observaciones de una serie oficial del INE y compara dos valores con periodo, unidad y cambio aritmético claramente identificado. Aplica después las instrucciones para interpretar resultados y revisar documentos con las capacidades autorizadas del anfitrión. No requiere procesos locales, Python ni claves del editor. Envía solo argumentos públicos mínimos, nunca conversaciones completas, documentos privados ni credenciales.
 
 Identifica la pregunta estadística y busca en las páginas oficiales del INE la operación, tabla y serie pertinentes. Verifica los metadatos antes de comparar valores.
 

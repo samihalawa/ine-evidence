@@ -4,7 +4,7 @@
     "email": "sami@samihalawa.com",
     "name": "Sami Halawa"
   },
-  "description": "Retrieve and compare official Spanish statistics (estadísticas del INE) using a verified series code. Show two comparable observations, dates, units and arithmetic changes.",
+  "description": "Compare official statistics from Spain (estadísticas de España) using a verified INE series code. Show observed periods, units, values and arithmetic changes with source links.",
   "extensions": {
     "com.openai": {
       "interface": {
@@ -12,15 +12,15 @@
         "category": "Data & Analytics",
         "composerIcon": "./assets/icon.png",
         "defaultPrompt": [
-          "Compare the available observations in INE series IPC251852 and show units and dates.",
-          "Consulta la serie IPC251852 del INE y calcula el cambio entre dos observaciones comparables.",
-          "Comprueba los periodos y la unidad de IPC251852 antes de interpretar su variación."
+          "Compara los dos últimos valores disponibles de IPC251852 y aclara sus fechas, unidad y vigencia.",
+          "Compare INE series IPC251852 and explain what its observed periods actually measure.",
+          "Necesito un dato estadístico de España: ayúdame a verificar el código de serie oficial antes de compararlo."
         ],
         "developerName": "Sami Halawa",
         "displayName": "Spain Statistics & INE",
         "logo": "./assets/logo.png",
-        "longDescription": "Compare official Spanish statistics from an INE series. Supply a verified series code to retrieve observations and compare two available comparable numeric periods. Keep the series name, observed periods and units alongside the values, absolute change and percentage change when defined. Use official source links to check the underlying series. The connector needs a series code; it does not discover a series from a topic alone, forecast future values or establish that an accessible series is still current. A change between observations is not automatically an annual growth rate.",
-        "shortDescription": "Compare official Spanish data",
+        "longDescription": "Compare official statistics from Spain (España) using a verified INE series code. Get the available numeric observations with their series name, observed periods and units. Compare the last two usable values with absolute change and arithmetic percentage change when defined, keeping official source links. Useful for checking an indicator before citing it in a report. The connector needs a series code and does not discover it from a topic. An accessible series can be historical; the change is not automatically an annual rate or a forecast.",
+        "shortDescription": "Spain statistics & indicators",
         "websiteURL": "https://aiplugins.megawebs.com/plugins/ine-evidence",
         "supportURL": "https://aiplugins.megawebs.com/plugins/ine-evidence/support",
         "privacyPolicyURL": "https://aiplugins.megawebs.com/plugins/ine-evidence/privacy",
@@ -65,6 +65,12 @@
               "prompt": "Consulta hasta veinticuatro observaciones de IPC53308. Indica hasta qué fecha llega la serie devuelta y cómo se identifica en el INE.",
               "tools_triggered": "compare_spanish_official_statistics",
               "expected_behavior": "Report the source’s title, returned coverage and latest observed date. Distinguish the series’ reported values from the separate change calculated between two observations. If the source fails or coverage is partial, explain what could be checked."
+            },
+            {
+              "description": "Recognize the user task without naming the plugin",
+              "prompt": "Necesito comprobar cuánto cambió este indicador de España entre sus últimas observaciones: serie INE IPC251852.",
+              "tools_triggered": "compare_spanish_official_statistics",
+              "expected_behavior": "Use the domain tool for the supplied public inputs without asking for unrelated account or profile information. Answer the requested comparison with returned official links, dates, units and actual coverage. Distinguish partial or failed source access from no matches; do not claim an unsupported feature or current status."
             }
           ],
           "negative": [
@@ -85,11 +91,11 @@
         "demo_recording_url": "https://github.com/samihalawa/spain-assistant-mcp-apps/releases/download/v0.6.1/spain-hosted-demo.mp4"
       },
       "publication": {
-        "release_notes": "Clearer task-based name, descriptions and examples for finding the right Spanish public records. Existing tools and source coverage are unchanged.",
+        "release_notes": "Improved Spanish and English discovery, first-use prompts and sourced result guidance across Spain utilities. No new data access, payment features or background monitoring.",
         "translations": {
           "es-ES": {
-            "subtitle": "Estadísticas oficiales de INE",
-            "description": "Compara estadísticas oficiales españolas de una serie del INE. Indica un código de serie verificado para consultar observaciones y comparar dos periodos numéricos comparables disponibles. Conserva nombre, periodos y unidades junto a los valores, cambio absoluto y cambio porcentual cuando se pueda calcular. Los enlaces oficiales permiten revisar la serie. El conector necesita su código: no descubre series solo por tema, predice valores ni acredita que una serie accesible siga vigente. El cambio entre observaciones no equivale automáticamente a una tasa anual."
+            "subtitle": "Estadísticas de España",
+            "description": "Datos y consultas de España. Compara estadísticas oficiales españolas de una serie del INE. Indica un código de serie verificado para consultar observaciones y comparar dos periodos numéricos comparables disponibles. Conserva nombre, periodos y unidades junto a los valores, cambio absoluto y cambio porcentual cuando se pueda calcular. Los enlaces oficiales permiten revisar la serie. El conector necesita su código: no descubre series solo por tema, predice valores ni acredita que una serie accesible siga vigente. El cambio entre observaciones no equivale automáticamente a una tasa anual."
           }
         }
       }
@@ -97,6 +103,8 @@
   },
   "keywords": [
     "spain",
+    "España",
+    "Spanish",
     "statistics",
     "economic data",
     "inflation",
@@ -108,7 +116,7 @@
   ],
   "license": "MIT",
   "name": "ine-evidence",
-  "version": "0.6.4",
+  "version": "0.6.5",
   "homepage": "https://aiplugins.megawebs.com/plugins/ine-evidence",
   "repository": "https://github.com/samihalawa/ine-evidence"
 }

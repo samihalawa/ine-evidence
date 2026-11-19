@@ -1,6 +1,6 @@
 # Spain Statistics & INE — ejemplo histórico
 
-Muestra histórica conservada de una edición anterior, incluida como referencia en Spain Statistics & INE 0.6.4. Leerla no ejecuta ni actualiza la consulta original.
+Muestra histórica conservada de una edición anterior, incluida como referencia en Spain Statistics & INE 0.6.5. Leerla no ejecuta ni actualiza la consulta original.
 
 La cifra correcta, con su contexto.
 

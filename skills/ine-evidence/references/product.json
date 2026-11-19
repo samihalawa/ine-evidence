@@ -1,12 +1,14 @@
 {
   "name": "Spain Statistics & INE",
-  "promise": "La cifra correcta, con su contexto.",
+  "promise": "Compara cifras de España con sus fechas y unidades.",
   "audience": "Analistas, periodistas, docentes y consultoras.",
-  "description": "Retrieve and compare official Spanish statistics (estadísticas del INE) using a verified series code. Show two comparable observations, dates, units and arithmetic changes.",
-  "short": "Estadísticas oficiales de INE",
+  "description": "Compare official statistics from Spain (estadísticas de España) using a verified INE series code. Show observed periods, units, values and arithmetic changes with source links.",
+  "short": "Estadísticas de España",
   "source": "INE",
   "keywords": [
     "spain",
+    "España",
+    "Spanish",
     "statistics",
     "economic data",
     "inflation",
@@ -17,18 +19,18 @@
     "indicadores"
   ],
   "prompts": [
-    "Compare the available observations in INE series IPC251852 and show units and dates.",
-    "Consulta la serie IPC251852 del INE y calcula el cambio entre dos observaciones comparables.",
-    "Comprueba los periodos y la unidad de IPC251852 antes de interpretar su variación."
+    "Compara los dos últimos valores disponibles de IPC251852 y aclara sus fechas, unidad y vigencia.",
+    "Compare INE series IPC251852 and explain what its observed periods actually measure.",
+    "Necesito un dato estadístico de España: ayúdame a verificar el código de serie oficial antes de compararlo."
   ],
   "benefits": [
-    "Encuentra operaciones, tablas y series a partir de enlaces e identificadores oficiales.",
-    "Explica unidades, base, ajustes y límites de comparación.",
-    "Distingue el periodo observado de la publicación y la consulta."
+    "Dos observaciones numéricas disponibles con valores, periodos y unidad.",
+    "Cambio absoluto y variación aritmética cuando puedan calcularse.",
+    "Fuente y contexto para distinguir una serie histórica de un indicador vigente."
   ],
   "limits": "Una serie accesible puede estar discontinuada o usar una base antigua. No enlaza bases ni compara poblaciones o ajustes incompatibles sin un método oficial. No ofrece previsiones ni asesoramiento de inversión.",
   "slug": "ine-evidence",
-  "version": "0.6.4",
+  "version": "0.6.5",
   "guidance": "Consulta pública con conector MCP alojado e instrucciones complementarias; conserva fuentes, fechas y cobertura real.",
   "mode": "hosted-read-only-mcp-with-guidance"
 }

@@ -1,8 +1,8 @@
 {
   "name": "ine-evidence",
   "displayName": "Spain Statistics & INE",
-  "version": "0.6.4",
-  "description": "Retrieve and compare official Spanish statistics (estadísticas del INE) using a verified series code. Show two comparable observations, dates, units and arithmetic changes.",
+  "version": "0.6.5",
+  "description": "Compare official statistics from Spain (estadísticas de España) using a verified INE series code. Show observed periods, units, values and arithmetic changes with source links.",
   "author": {
     "name": "Sami Halawa",
     "email": "sami@samihalawa.com"
@@ -10,6 +10,8 @@
   "license": "MIT",
   "keywords": [
     "spain",
+    "España",
+    "Spanish",
     "statistics",
     "economic data",
     "inflation",

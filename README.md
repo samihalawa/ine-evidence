@@ -1,22 +1,21 @@
 # Spain Statistics & INE
 
-Retrieve and compare official Spanish statistics (estadísticas del INE) using a verified series code. Show two comparable observations, dates, units and arithmetic changes.
+Compare official statistics from Spain (estadísticas de España) using a verified INE series code. Show observed periods, units, values and arithmetic changes with source links.
 
-**Versión 0.6.4 · Conector MCP alojado e instrucciones complementarias · Sami Halawa · MIT**
+**Versión 0.6.5 · Conector MCP alojado e instrucciones complementarias · Sami Halawa · MIT**
 
 ## Instalación y uso
 
-```bash
-/plugin install ine-evidence --marketplace samihalawa/2026-MASTER-Marketplace-Plugins-Connectors-etc
-```
+Instalación y conexión: [abrir la página del producto](https://aiplugins.megawebs.com/plugins/ine-evidence). Elige allí las instrucciones del anfitrión que utilices.
 
 
 Instala el paquete en un anfitrión compatible con plugins y MCP remoto. La configuración incluida conecta `https://aiplugins.megawebs.com/mcp/ine-evidence` mediante Streamable HTTP y expone `compare_spanish_official_statistics`. No necesitas Python local, instalar dependencias ni proporcionar una clave del editor. La disponibilidad de la conexión depende del anfitrión y de la fuente pública.
 
-> Consulta las dos últimas observaciones disponibles de la serie INE IPC251852 e indica su periodo y unidad.
+> Compara los dos últimos valores disponibles de IPC251852 y aclara sus fechas, unidad y vigencia.
 
-- Consulta ocho observaciones de la serie IPC251852 e identifica cuáles se usan en la comparación.
-- Consulta seis observaciones de IPC251852. Distingue el cambio absoluto y porcentual de la tasa interanual oficial.
+- Compare INE series IPC251852 and explain what its observed periods actually measure.
+- Necesito un dato estadístico de España: ayúdame a verificar el código de serie oficial antes de compararlo.
+
 
 Lee [la habilidad](skills/ine-evidence/SKILL.md) para el procedimiento, [las fuentes](skills/ine-evidence/references/sources.md) y [el contrato de acceso](skills/ine-evidence/references/runtime.md). La herramienta realiza la consulta acotada descrita; la lectura de documentos, interpretación y creación de archivos usan capacidades adicionales del anfitrión. Conserva los identificadores, enlaces, fechas y límites realmente devueltos.
 

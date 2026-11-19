@@ -1,5 +1,5 @@
 {
-  "version": "0.6.4",
+  "version": "0.6.5",
   "endpoint": "https://aiplugins.megawebs.com/mcp/ine-evidence",
   "scope": "Specification of positive inputs and expected behavior, and unsupported negative requests. This JSON defines cases and is not an execution log. Direct MCP calls and the SDK demo verify tool behavior; the demo does not test assistant routing. Actual native assistant test evidence is retained in the native release records.",
   "positive": [
@@ -52,6 +52,16 @@
         "last": 24
       },
       "expected_behavior": "Report the source’s title, returned coverage and latest observed date. Distinguish the series’ reported values from the separate change calculated between two observations. If the source fails or coverage is partial, explain what could be checked."
+    },
+    {
+      "id": "positive-indirect",
+      "prompt": "Necesito comprobar cuánto cambió este indicador de España entre sus últimas observaciones: serie INE IPC251852.",
+      "tool": "compare_spanish_official_statistics",
+      "arguments": {
+        "series_code": "IPC251852",
+        "last": 12
+      },
+      "expected_behavior": "Use the domain tool for the supplied public inputs without asking for unrelated account or profile information. Answer the requested comparison with returned official links, dates, units and actual coverage. Distinguish partial or failed source access from no matches; do not claim an unsupported feature or current status."
     }
   ],
   "negative": [
